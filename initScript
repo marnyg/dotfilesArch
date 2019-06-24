@@ -1,0 +1,17 @@
+#! /bin/bash
+
+#ln -sf ~/git/dotfilesArch/config/sxhkd ~/.config/sxhkd/sxhkdrc
+
+for f in $(find -path "*" -not -path "./.git*" -not -path "./README.md" -not -path "." -not -path "./.config" -not -path "./bin")
+do
+	#echo $f
+	if [ -d $f ]
+	then 
+		mkdir $HOME$(echo $f| cut -c 2-)
+	else
+		ln -sf $HOME/git/dotfilesArch$(echo $f| cut -c 2-) $HOME$(echo $f| cut -c 2-)
+	fi
+	#echo ~$(echo $f| cut -c 2-)
+
+done
+
