@@ -1,0 +1,34 @@
+super+s
+    status
+super+r
+    st -e ranger
+super+e
+    st -e nvim
+super+n
+    st -e newsboat
+super+m
+    st -e ncmpcpp
+super+p
+    pomodora
+super+shift+p
+    killall spt && notify-send PK
+super+d
+    dmenu_run
+super+w
+    surf duckduckgo.com/lite
+super+o
+    st -e htop
+super+Return
+    st 
+super+c
+    cd ~ && st 
+super+apostrophe
+    amixer set Master 5%+
+super+semicolon
+    amixer set Master 5%-
+super+Escape
+    mpc toggle
+super+bracketleft
+    mpc prev
+super+bracketright
+    mpc next
