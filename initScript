@@ -2,7 +2,7 @@
 
 #ln -sf ~/git/dotfilesArch/config/sxhkd ~/.config/sxhkd/sxhkdrc
 
-for f in $(find -path "*" -not -path "./.git*" -not -path "./README.md" -not -path "." -not -path "./.config" -not -path "./bin")
+for f in $(find -path "*" -not -path "./.git*" -not -path "./README.md" -not -path "." -not -path "./.config")
 do
 	#echo $f
 	if [ -d $f ]

@@ -15,7 +15,7 @@ super+shift+p
 super+d
     dmenu_run
 super+w
-    surf duckduckgo.com/lite
+    qutebrowser
 super+o
     st -e htop
 super+Return

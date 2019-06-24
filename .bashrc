@@ -10,8 +10,6 @@ alias sdn="shutdown now"
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alais xi='xinput --map-to-output 23 HDMI-0'
-xrandr --output DVI-I-1 --rotate right
  
  
 PS1='[\u@\h \W]\$ '
@@ -27,9 +25,4 @@ else
  PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parse_git_branch)\$ '
 fi
 unset color_prompt force_color_prompt
-
-
-export PATH=$PATH:~/bin
-export PATH=$PATH:~/bin/jetbrains-toolbox
-export EDITOR="emacsclient -nw"
 
