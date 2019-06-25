@@ -10,6 +10,11 @@ alias sdn="shutdown now"
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias t="task"
+alias g=git
+alias ga="git add"
+alias gs="git status"
+alias gb="git branch"
  
  
 PS1='[\u@\h \W]\$ '
