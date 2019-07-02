@@ -15,7 +15,9 @@ alias g=git
 alias ga="git add"
 alias gs="git status"
 alias gb="git branch"
- 
+alias gc="git commit"
+alias gcm="git commit -m"
+alias gd="git diff"
  
 PS1='[\u@\h \W]\$ '
 
