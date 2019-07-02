@@ -18,6 +18,8 @@ alias gb="git branch"
 alias gc="git commit"
 alias gcm="git commit -m"
 alias gd="git diff"
+alias gp="git push"
+
  
 PS1='[\u@\h \W]\$ '
 
