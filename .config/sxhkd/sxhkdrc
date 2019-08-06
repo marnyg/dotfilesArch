@@ -2,6 +2,8 @@ super+s
     status
 super+r
     st -e ranger
+super+a
+    st -e lf
 super+e
     st -e nvim
 super+n
@@ -20,8 +22,6 @@ super+o
     st -e htop
 super+Return
     st 
-super+c
-    cd ~ && st 
 super+apostrophe
     amixer set Master 5%+
 super+semicolon
