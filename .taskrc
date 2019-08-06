@@ -33,5 +33,5 @@ taskd.certificate=\/home\/mar\/.task\/mar.cert.pem
 taskd.key=\/home\/mar\/.task\/mar.key.pem
 taskd.ca=\/home\/mar\/.task\/ca.cert.pem
 taskd.server=muldsvor.ddns.net:53589
-taskd.credentials=public\/mar\/0f51bb36-dbd3-4e65-90e4-14ad12d46f78
+taskd.credentials=public\/mar\/45bb8739-693c-4c46-844f-2f1ec0377b69
 confirmation=off
