@@ -35,3 +35,7 @@ taskd.ca=\/home\/mar\/.task\/ca.cert.pem
 taskd.server=muldsvor.ddns.net:53589
 taskd.credentials=public\/mar\/b729b5e8-f8a6-4b5e-90f2-5e17ca92e90e
 confirmation=off
+context.school=+school
+context.home=+server or +tools or +home or +learning not +school
+context.learning=+learning or +tools or +school
+context=school

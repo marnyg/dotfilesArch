@@ -1,8 +1,7 @@
 #! /bin/bash
 
-redshift&
+xrandr --output DVI-I-1 --rotate right
 feh --bg-scale ~/.wall3.jpeg
-compton -b
 
 setxkbmap -layout us,no -variant altgr-intl -option "lv3:ralt_alt,grp:alt_shift_toggle" -option caps:escape 
 xset r rate 300 100&
@@ -11,6 +10,6 @@ xmodmap -e 'keycode 135 = Super_R'
 status.sh&
 sxhkd &
 
-while true; do
-	exec dwm 2> ~/.dwm.log
-done
+redshift&
+compton -b
+dwm 2> ~/.dwm.log

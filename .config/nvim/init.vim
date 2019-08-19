@@ -84,15 +84,17 @@ Plug 'haya14busa/vim-gtrans'
 Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
+""Plug 'xolox/vim-notes'
+
+
 
 
 call plug#end()
 
+let g:notes_directories = ['~/notes/', '~/notes/school/fysMath/fys']
+
 let g:deoplete#enable_at_startup =1 
 
-" Sample configuration for dictionary source with multiple
-" dictionary files.
-setlocal dictionary+=/home/mar/git/UnrealEngine/Engine/Source/Runtime
 " Remove this if you'd like to use fuzzy search
 call deoplete#custom#source(
 \ 'dictionary', 'matchers', ['matcher_head'])

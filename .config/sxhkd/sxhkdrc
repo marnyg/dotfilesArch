@@ -8,9 +8,11 @@ super+e
     st -e nvim
 super+n
     st -e newsboat
-super+m
+super+shift+m
     st -e ncmpcpp
 super+p
+    passmenu --type
+super+shift+p
     pomodora
 super+shift+p
     killall spt && notify-send PK
@@ -32,3 +34,6 @@ super+bracketleft
     mpc prev
 super+bracketright
     mpc next
+Print
+    scrot -s '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'
+

@@ -99,3 +99,23 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 
 nnoremap <Leader>m :!make -C build
+
+noremap <C-m> :silent w <bar> !python % <CR>
+
+
+
+""function! s:compile_and_run()
+  ""  :w
+    "":!python %
+  ""if &filetype == 'c'
+    ""exec "AsyncRun! gcc % -o %<; time ./%<"
+  ""elseif &filetype == 'cpp'
+   ""exec "AsyncRun! g++ -std=c++11 % -o %<; time ./%<"
+  ""elseif &filetype == 'java'
+   ""exec "AsyncRun! javac %; time java %<"
+  ""elseif &filetype == 'sh'
+   ""exec "AsyncRun! time bash %"
+  ""elseif &filetype == 'python'
+   ""exec "AsyncRun! time python %"
+  ""endif
+""endfunction
