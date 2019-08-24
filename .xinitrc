@@ -12,4 +12,4 @@ sxhkd &
 
 redshift&
 compton -b
-dwm 2> ~/.dwm.log
+[ "$(tty)" = "/dev/tty2" ] && pgrep -x Xorg >/dev/null && dwm 2> ~/.dwm.log
