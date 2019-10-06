@@ -8,8 +8,16 @@ xset r rate 300 100&
 xmodmap -e 'keycode 135 = Super_R'
 
 status.sh&
+xfce4-clipman&
 sxhkd &
 
 redshift&
 compton -b
-[ "$(tty)" = "/dev/tty2" ] && pgrep -x Xorg >/dev/null && dwm 2> ~/.dwm.log
+dbus-update-activation-environment --systemd DISPLAY
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+nextcloud&
+
+while :; do
+	ssh-agent dwm || break
+done

@@ -23,7 +23,7 @@ super+w
 super+o
     st -e htop
 super+Return
-    st 
+    st -e tmux
 super+apostrophe
     amixer set Master 5%+
 super+semicolon
@@ -35,5 +35,6 @@ super+bracketleft
 super+bracketright
     mpc next
 Print
-    scrot -s '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'
+    xfce4-screenshooter -r -c
+    #scrot -s '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'
 
