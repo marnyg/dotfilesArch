@@ -19,6 +19,11 @@ alias gc="git commit"
 alias gcm="git commit -m"
 alias gd="git diff"
 alias gp="git push"
+alias gcstart="gcloud compute instances start my-fastai-instance"
+alias gclist="gcloud compute instances list"
+alias gcstop="gcloud compute instances stop my-fastai-instance"
+alias gcssh="gcloud compute ssh --zone=$ZONE jupyter@$INSTANCE_NAME -- -L 8080:localhost:8080"
+
 
  
 PS1='[\u@\h \W]\$ '
@@ -34,7 +39,6 @@ else
  PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parse_git_branch)\$ '
 fi
 unset color_prompt force_color_prompt
-
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/mar/google-cloud-sdk/path.bash.inc' ]; then . '/home/mar/google-cloud-sdk/path.bash.inc'; fi

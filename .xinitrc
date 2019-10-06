@@ -9,7 +9,15 @@ xmodmap -e 'keycode 135 = Super_R'
 
 status.sh&
 sxhkd>~/.sxhkd.log &
-
 redshift &
 compton &
-dwm > ~/.dwm.log
+xfce4-clipman&
+
+dbus-update-activation-environment --systemd DISPLAY
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+nextcloud&
+
+while :; do
+	ssh-agent dwm || break
+done
