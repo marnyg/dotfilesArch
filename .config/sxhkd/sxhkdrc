@@ -23,7 +23,7 @@ super+w
 super+o
     st -e htop
 super+Return
-    st -e tmux
+    st -e tmux new-session -A -s main
 super+apostrophe
     amixer set Master 5%+
 super+semicolon
