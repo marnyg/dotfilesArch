@@ -25,9 +25,9 @@ super+o
 super+Return
     st -e tmux new-session -A -s main
 super+apostrophe
-    amixer set Master 5%+
+    changeVolume 5%+
 super+semicolon
-    amixer set Master 5%-
+    changeVolume 5%-
 super+Escape
     mpc toggle
 super+bracketleft
