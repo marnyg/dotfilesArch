@@ -11,9 +11,10 @@ status.sh&
 sxhkd>~/.sxhkd.log &
 redshift &
 compton &
-xfce4-clipman&
+clipmenud &
 
-dbus-update-activation-environment --systemd DISPLAY
+systemctl --user import-environment DISPLAY XAUTHORITY
+dbus-update-activation-environment --systemd DISPLAY XAUTHORITY 
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 nextcloud&

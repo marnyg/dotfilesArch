@@ -2,6 +2,8 @@ super+s
     status
 super+r
     st -e ranger
+super+c
+    clipmenu
 super+a
     st -e lf
 super+e
@@ -35,6 +37,5 @@ super+bracketleft
 super+bracketright
     mpc next
 Print
-    xfce4-screenshooter -r -c
-    #scrot -s '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'
+    sleep 0.3 && scrot -s '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f && rm $f'
 

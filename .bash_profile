@@ -18,6 +18,9 @@ export INSTANCE_TYPE="n1-highmem-8"
 export PATH="$PATH:/home/mar/.local/bin"
 export PATH="$HOME/.cargo/bin:$PATH"
 
-[ "$(tty)" = "/dev/tty2" ] && exec startx
+#[ "$(tty)" = "/dev/tty2" ] && exec startx
+if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -le 3 ]]; then
+  exec startx
+fi
 #[ "$(tty)" = "/dev/tty2" ] && ! pgrep -x Xorg >/dev/null && exec startx
 
