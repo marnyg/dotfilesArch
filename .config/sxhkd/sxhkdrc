@@ -24,8 +24,10 @@ super+w
     qutebrowser
 super+o
     st -e htop
+#super+Return
+#    st -e tmux new-session -A -s main
 super+Return
-    st -e tmux new-session -A -s main
+    st -e zsh
 super+apostrophe
     changeVolume 5%+
 super+semicolon
@@ -37,5 +39,8 @@ super+bracketleft
 super+bracketright
     mpc next
 Print
-    sleep 0.3 && scrot -s '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f && rm $f'
+    F=/tmp/`date +%s`.png && echo $F &&  import $F && xclip -selection clipboard -target image/png -i $F && rm $F
+    #sleep 0.3 && scrot -s '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f && rm $f'
+super+x
+    F=/tmp/`date +%s`.png && echo $F &&  import $F && xclip -selection clipboard -target image/png -i $F && rm $F
 
