@@ -5,6 +5,7 @@ let g:vim_markdown_folding_style_pythonic = 1
 let g:vim_markdown_folding_level = 0
 let g:vim_markdown_math = 1
 inoremap <C-L> <C-G>u<Esc>[s1z=`]a<C-G>u 
+nnoremap zz [s1z=
 set breakindent
 set linebreak
 autocmd BufEnter *.md :set spell spelllang=nb
@@ -18,7 +19,7 @@ noremap <Leader>tc :Tclear <CR>
 noremap <Leader>tk :Tkill <CR>
 noremap <Leader>tt :Ttoggle <CR>
 noremap <Leader>tn <C-n> :Tnew <CR>
-
+nnoremap <c-z> <nop>
 
 "*****************************************************************************
 "" Mappings
@@ -30,7 +31,7 @@ nnoremap <leader>so :OpenSession<Space>
 nnoremap <leader>ss :SaveSession<Space>
 nnoremap <leader>sd :DeleteSession<CR>
 nnoremap <leader>sc :CloseSession<CR>
-
+"" noremap <C-m> :w <bar>!python3 ./oppg5v2.py <CR>
 "" Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
 
@@ -81,8 +82,8 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <C-h> <C-w>h
-noremap <C-L> :10winc - <CR>
-noremap <C-H> :10winc + <CR>
+""noremap <C-L> :10winc - <CR>
+""noremap <C-H> :10winc + <CR>
 
 "" Vmap for maintain Visual Mode after shifting > and <
 vmap < <gv
