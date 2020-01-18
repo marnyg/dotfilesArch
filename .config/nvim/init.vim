@@ -27,8 +27,6 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 "*****************************************************************************
 "" Plug install packages
 "*****************************************************************************
-""Plug 'scrooloose/nerdtree'
-""Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
@@ -89,12 +87,13 @@ Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 
 
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
+Plug 'blindFS/vim-taskwarrior'
 
 
 call plug#end()
 
-let g:notes_directories = ['~/notes/', '~/notes/school/fysMath/fys']
 
+let g:task_rc_override = 'rc.defaultwidth=0'
 let g:deoplete#enable_at_startup =1 
 
 " Remove this if you'd like to use fuzzy search
