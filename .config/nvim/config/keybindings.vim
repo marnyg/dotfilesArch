@@ -1,37 +1,14 @@
-
-
-let g:vim_markdown_override_foldtext = 0
-let g:vim_markdown_folding_style_pythonic = 1
-let g:vim_markdown_folding_level = 0
-let g:vim_markdown_math = 1
-inoremap <C-L> <C-G>u<Esc>[s1z=`]a<C-G>u 
-nnoremap zz [s1z=
-set breakindent
-set linebreak
-autocmd BufEnter *.md :set spell spelllang=nb
-autocmd BufEnter eksamenV2016.md :setlocal spellfile+=oneoff.utf-8.add
-
-
-nnoremap <leader><cr> :TREPLSendLine<cr>j " send current line and move down
-vnoremap <leader><cr> :TREPLSendSelection<cr> " send current selection
-noremap <Leader>tr :T 
-noremap <Leader>tc :Tclear <CR>
-noremap <Leader>tk :Tkill <CR>
-noremap <Leader>tt :Ttoggle <CR>
-noremap <Leader>tn <C-n> :Tnew <CR>
-nnoremap <c-z> <nop>
-
 "*****************************************************************************
 "" Mappings
 "*****************************************************************************
-
+"Taskwarrior
+noremap <Leader>t :TW <CR>
 
 " session management
 nnoremap <leader>so :OpenSession<Space>
 nnoremap <leader>ss :SaveSession<Space>
 nnoremap <leader>sd :DeleteSession<CR>
 nnoremap <leader>sc :CloseSession<CR>
-"" noremap <C-m> :w <bar>!python3 ./oppg5v2.py <CR>
 "" Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
 
@@ -103,20 +80,3 @@ nnoremap <Leader>m :!make -C build
 
 noremap <C-m> :silent w <bar> !python % <CR>
 
-
-
-""function! s:compile_and_run()
-  ""  :w
-    "":!python %
-  ""if &filetype == 'c'
-    ""exec "AsyncRun! gcc % -o %<; time ./%<"
-  ""elseif &filetype == 'cpp'
-   ""exec "AsyncRun! g++ -std=c++11 % -o %<; time ./%<"
-  ""elseif &filetype == 'java'
-   ""exec "AsyncRun! javac %; time java %<"
-  ""elseif &filetype == 'sh'
-   ""exec "AsyncRun! time bash %"
-  ""elseif &filetype == 'python'
-   ""exec "AsyncRun! time python %"
-  ""endif
-""endfunction

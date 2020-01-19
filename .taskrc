@@ -38,4 +38,3 @@ confirmation=off
 context.school=+school
 context.home=+server or +tools or +home or +learning not +school
 context.learning=+learning or +tools or +school
-context=school
