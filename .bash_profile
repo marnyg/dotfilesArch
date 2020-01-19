@@ -10,6 +10,8 @@ export ZONE="us-west1-b" # budget: "us-west1-b"
 export INSTANCE_NAME="my-fastai-instance"
 export INSTANCE_TYPE="n1-highmem-8"
 export PATH="$PATH:/home/mar/.local/bin"
+gpg-connect-agent /bye
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 
 if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -le 3 ]]; then
   exec startx
