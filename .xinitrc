@@ -13,10 +13,10 @@ redshift &
 compton &
 clipmenud &
 
-systemctl --user import-environment DISPLAY XAUTHORITY
-dbus-update-activation-environment --systemd DISPLAY XAUTHORITY 
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK
+#systemctl --user import-environment DISPLAY XAUTHORITY
+#dbus-update-activation-environment --systemd DISPLAY XAUTHORITY 
+#eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+#export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socke)
 nextcloud&
 
 while :; do
