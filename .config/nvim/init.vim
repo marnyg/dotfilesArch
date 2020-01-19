@@ -145,32 +145,20 @@ nnoremap <silent> <leader><space> :noh<cr>
 nnoremap <Leader>o :.Gbrowse<CR>
 
 "*****************************************************************************
-"" Custom configs
+"" Configs
 "*****************************************************************************
 
-
-"*****************************************************************************
-"*****************************************************************************
-
-"" Include user's local vim config
+"let mapleader=','
 if filereadable(expand("~/.config/nvim/config/local_init.vim"))
   source ~/.config/nvim/config/local_init.vim
-endif
-if filereadable(expand("~/.config/nvim/config/keybindings.vim"))
-  source ~/.config/nvim/config/keybindings.vim
 endif
 if filereadable(expand("~/.config/nvim/config/conf.vim"))
   source ~/.config/nvim/config/conf.vim
 endif
+if filereadable(expand("~/.config/nvim/config/keybindings.vim"))
+  source ~/.config/nvim/config/keybindings.vim
+endif
 if filereadable(expand("~/.config/nvim/config/vim-airtline-conf.vim"))
   source ~/.config/nvim/config/vim-airtline-conf.vim
 endif
-
-"*****************************************************************************
-"" Convenience variables
-"*****************************************************************************
-
-
-
-
 
