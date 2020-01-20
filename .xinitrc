@@ -7,18 +7,13 @@ setxkbmap -layout us,no -variant altgr-intl -option "lv3:ralt_alt,grp:alt_shift_
 xset r rate 300 100&
 xmodmap -e 'keycode 135 = Super_R'
 
-status.sh&
+status.sh &
 sxhkd>~/.sxhkd.log &
 redshift &
 compton &
 clipmenud &
 unclutter &
-
-systemctl --user import-environment DISPLAY XAUTHORITY
-dbus-update-activation-environment --systemd DISPLAY XAUTHORITY 
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK
-nextcloud&
+nextcloud &
 
 while :; do
 	ssh-agent dwm || break
