@@ -1,13 +1,13 @@
-super+s
-    status
 super+r
-    st -e ranger
+    st -e lf
 super+c
     clipmenu
 super+a
-    st -e lf
+    st -e nvim -c terminal
 super+e
     st -e nvim
+super+shift+e
+    st -e nvim -c TW
 super+n
     st -e newsboat
 super+shift+m
@@ -24,8 +24,6 @@ super+w
     qutebrowser
 super+o
     st -e htop
-#super+Return
-#    st -e tmux new-session -A -s main
 super+Return
     st -e zsh
 super+apostrophe

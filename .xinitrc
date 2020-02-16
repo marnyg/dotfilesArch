@@ -13,7 +13,7 @@ redshift &
 compton &
 clipmenud &
 unclutter &
-nextcloud &
+nextcloud --background &
 
 while :; do
 	ssh-agent dwm || break
