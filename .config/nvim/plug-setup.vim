@@ -64,8 +64,9 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'ryanolsonx/vim-lsp-python'
 Plug 'ryanolsonx/vim-lsp-javascript'
-Plug 'OmniSharp/omnisharp-vim'
-Plug 'w0rp/ale'
+Plug 'mattn/vim-lsp-settings'
+"Plug 'OmniSharp/omnisharp-vim'
+"Plug 'w0rp/ale'
 
 
 if executable('docker-langserver')
@@ -83,7 +84,7 @@ endif
 "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhere to h
 "alternativ
 Plug 'neovim/nvim-lsp'
-Plug 'maralla/completor.vim'
+"Plug 'maralla/completor.vim'
 
 
 

@@ -1,6 +1,6 @@
 ""setup plug
-if filereadable(expand("~/.config/nvim/config/plug-setup.vim"))
-  source ~/.config/nvim/config/plug-setup.vim
+if filereadable(expand("~/.config/nvim/plug-setup.vim"))
+  source ~/.config/nvim/plug-setup.vim
 endif
 
 "" Configs
