@@ -69,12 +69,17 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(  
-    git
-    sudo    
     z
+    sudo    
     extract
     vi-mode
+    zsh-interactive-cd
 )
+
+source ~/.zplug/init.zsh
+zplug load 'wfxr/forgit'
+
+
 
 source $ZSH/oh-my-zsh.sh
 
