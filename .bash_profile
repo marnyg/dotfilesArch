@@ -12,6 +12,8 @@ export INSTANCE_TYPE="n1-highmem-8"
 export PATH="$PATH:/home/mar/.local/bin"
 gpg-connect-agent /bye
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+source /home/mar/.icons
+source /home/mar/.fzfcommands
 
 if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -le 3 ]]; then
   exec startx

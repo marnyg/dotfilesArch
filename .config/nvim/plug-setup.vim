@@ -34,7 +34,10 @@ Plug 'tpope/vim-surround'
 Plug 'xarthurx/taskwarrior.vim'
 
 Plug 'rbgrouleff/bclose.vim' 
-Plug 'francoiscabrol/ranger.vim'
+"Plug 'francoiscabrol/ranger.vim'
+Plug 'rbgrouleff/bclose.vim'
+Plug 'ptzz/lf.vim'
+
 
 "" Color
 Plug 'tomasr/molokai'

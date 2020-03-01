@@ -1,13 +1,15 @@
 super+r
     st -e lf
 super+c
-    clipmenu
+    clipmenu 
 super+a
     st -e nvim -c terminal
 super+e
     st -e nvim
+#super+shift+e
+#    st -e nvim -c TW
 super+shift+e
-    st -e nvim -c TW
+    emacsclient -c
 super+n
     st -e newsboat
 super+shift+m

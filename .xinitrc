@@ -14,6 +14,7 @@ compton &
 clipmenud &
 unclutter &
 nextcloud --background &
+emacs --daemon &
 
 while :; do
 	ssh-agent dwm || break
