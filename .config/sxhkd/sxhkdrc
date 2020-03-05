@@ -16,9 +16,9 @@ super+shift+m
     st -e ncmpcpp
 super+p
     passmenu --type
-super+shift+p
+super+u
     pomodora
-super+shift+p
+super+shift+u
     killall spt && notify-send PK
 super+d
     dmenu_run

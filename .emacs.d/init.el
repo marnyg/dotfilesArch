@@ -52,6 +52,24 @@
 	("WORKING" . "yellow")
 	("HOLD"    . "red")
 	("DONE"    . "green")))
+(setq
+ ;; Default directory for org files
+ org-directory "~/notes/org"
+ ;; Directory for notes/tasks to be refiled
+ org-default-notes-file (concat org-directory "/refile.org")
+ ;; Allows to store agenda files in their appropriate files.
+ ;; This is useful when per project task lists are used.
+ ;; Only show level 1 headings for refiling (level 2 are the task headers)
+ org-refile-targets (quote ((nil :maxlevel . 1)
+ 			      (org-agenda-files :maxlevel . 1)))
+ ;; Org agenda files read from here
+ org-agenda-files (list org-directory)
+ )
+(define-key global-map (kbd "C-c t")
+  (lambda () (interactive) (org-capture nil "t")))
+       
+(define-key global-map (kbd "C-c c")
+  (lambda () (interactive) (org-capture nil )))
 
 ;; UI configurations
 (scroll-bar-mode -1)
@@ -117,6 +135,8 @@
 ;; RipGrep
 (use-package helm-rg :ensure t)
 
+;; RipGrep
+(use-package helm-flyspell :ensure t) 
 ;; Projectile
 (use-package projectile
   :ensure t
@@ -133,6 +153,29 @@
   :config
   (helm-projectile-on))
 
+;; spelling
+(add-to-list 'ispell-local-dictionary-alist '("norsk-hunspell"
+                                              "[[:alpha:]]"
+                                              "[^[:alpha:]]"
+                                              "[']"
+                                              t
+                                              ("-d" "nb_NO"); Dictionary file name
+                                              nil
+                                              iso-8859-1))
+
+(add-to-list 'ispell-local-dictionary-alist '("english-hunspell"
+                                              "[[:alpha:]]"
+                                              "[^[:alpha:]]"
+                                              "[']"
+                                              t
+                                              ("-d" "en_US-large")
+                                              nil
+                                              iso-8859-1))
+
+(setq ispell-program-name "hunspell") 
+(setq ispell-dictionary "nb_NO") 
+(define-key flyspell-mode-map (kbd "C-;") 'helm-flyspell-correct) 
+
 ;; All The Icons
 (use-package all-the-icons :ensure t)
 
@@ -143,7 +186,8 @@
   (setq neo-theme (if (display-graphic-p) 'icons 'arrow)))
 
 
-(evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
+
+(evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-quick-look) 
 (evil-define-key 'normal neotree-mode-map (kbd "backtab") 'neotree-quick-look)
 (evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
 (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
@@ -152,6 +196,9 @@
 (evil-define-key 'normal neotree-mode-map (kbd "p") 'neotree-previous-line)
 (evil-define-key 'normal neotree-mode-map (kbd "A") 'neotree-stretch-toggle)
 (evil-define-key 'normal neotree-mode-map (kbd "H") 'neotree-hidden-file-toggle)
+
+(use-package all-the-icons :ensure t)  
+(setq neo-theme (if (display-graphic-p) 'icons 'arrow)) 
 
 ;; Which Key
 (use-package which-key
@@ -190,6 +237,7 @@
   "qq"  '(kill-emacs :which-key "quit")
   ;; NeoTree
   "ft"  '(neotree-toggle :which-key "toggle neotree")
+  "ff"  '(helm-find-files :which-key "find file")
   ;; Others
   "at"  '(ansi-term :which-key "open terminal")
 ))
@@ -204,17 +252,29 @@
               (evil-org-set-key-theme)))
   (require 'evil-org-agenda)
   (evil-org-agenda-set-keys))
+;;keybind
+(global-set-key (kbd "C-c a") 'org-agenda)
+
+;; autosave org evry 30 sec
+(add-hook 'auto-save-hook 'org-save-all-org-buffers)
 
 ;; Fancy titlebar for MacOS
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
 (setq ns-use-proxy-icon  nil)
 (setq frame-title-format nil)
+
+;;Org bullets
+(use-package org-bullets :ensure t  ) 
+(require 'org-bullets) 
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
  
 ;; Flycheck
 (use-package flycheck
   :ensure t
   :init (global-flycheck-mode))
+
+(add-hook 'org-mode-hook 'turn-on-flyspell)
 
 (use-package csharp-mode
   :ensure t
@@ -293,6 +353,15 @@
   (spaceline-toggle-buffer-size-off)
   (spaceline-toggle-evil-state-on))
 
+
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/notes/org/todo.org" "Tasks")
+         "* TODO %?\n  %i\n  %a")
+        ("j" "Journal" entry (file+datetree "~/notes/personal/journal.org")
+         "* %?\nEntered on %U\n  %i\n  %a"))) 
+(define-key global-map (kbd "C-c x")
+  (lambda () (interactive) (org-capture)))
+ 
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;; Language Supports ;;
 ;;;;;;;;;;;;;;;;;;;;;;;

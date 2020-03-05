@@ -13,6 +13,7 @@ redshift &
 compton &
 clipmenud &
 unclutter &
+dunst &
 nextcloud --background &
 emacs --daemon &
 
