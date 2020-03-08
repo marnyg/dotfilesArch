@@ -1,4 +1,4 @@
-# ~/.bash_profile
+#! /bin/bash
 
 export PATH=$PATH:$HOME/bin
 export BROWSER=qutebrowser
