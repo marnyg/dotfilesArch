@@ -26,6 +26,8 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export WINEPREFIX="$XDG_DATA_HOME/wineprefix/default"
 export WINEPREFIX="$XDG_DATA_HOME/kodi"
+export TASKRC="$XDG_CONFIG_HOME"/task/taskrc
+export TASKDATA="$XDG_DATA_HOME"/task
 
 #export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
 #export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
@@ -38,8 +40,8 @@ export INSTANCE_TYPE="n1-highmem-8"
 #GPG
 gpg-connect-agent /bye
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-source /home/mar/.icons
-source /home/mar/.fzfcommands
+source /home/mar/.config/icons
+source /home/mar/.config/fzfcommands
 
 if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -le 3 ]]; then
   exec startx
