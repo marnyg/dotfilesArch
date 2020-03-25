@@ -97,9 +97,15 @@
  ;; Paragraph movement
  (global-set-key (kbd "M-n") 'forward-paragraph)
  (global-set-key (kbd "M-p") 'backward-paragraph)
+ (global-set-key (kbd "M-a") 'ace-window)
 
 
  #+END_SRC
+** copy paste
+ #+BEGIN_SRC emacs-lisp
+ (setq x-select-enable-primary t)
+ #+END_SRC
+
 * packages
 ** orgmode config
  #+BEGIN_SRC emacs-lisp
@@ -108,10 +114,10 @@
  (setq org-clock-sound "/usr/share/xpra/bell.wav") 
  (setq org-enforce-todo-dependencies t)
  (setq org-todo-keywords
-       '((sequence "TODO" "WORKING" "HOLD" "|" "DONE")))
+       '((sequence "TODO" "HOLD" "NEXT" "|" "DONE")))
  (setq org-todo-keyword-faces
        '(("TODO"    . "blue")
-	 ("WORKING" . "yellow")
+	 ("NEXT"    . "yellow")
 	 ("HOLD"    . "red")
 	 ("DONE"    . "green")))
  (setq
@@ -132,6 +138,24 @@
        
  (define-key global-map (kbd "C-c c")
    (lambda () (interactive) (org-capture nil )))
+      
+ (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((python . t) (shell . t)))
+   
+ (defun my-org-confirm-babel-evaluate (lang body)
+   (not (member lang '("C" "clojure" "shell" "python" "plantuml"))))
+ (setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
+ 
+ (add-hook 'org-babel-after-execute-hook 'org-redisplay-inline-images)
+ 
+ (defun my-org-mode-settings ()
+   (toggle-word-wrap)
+   (toggle-truncate-lines))
+(add-hook 'org-mode-hook 'my-org-mode-settings)
+ 
+(define-key global-map (kbd "M-v")
+   (lambda () (interactive) (org-babel-execute-src-block)))
  #+END_SRC
 ** org capture templates
  #+BEGIN_SRC emacs-lisp
@@ -144,6 +168,14 @@
  (define-key global-map (kbd "C-c x")
    (lambda () (interactive) (org-capture)))
  #+END_SRC
+** htmlize
+ #+BEGIN_SRC emacs-lisp
+ 
+ (use-package htmlize
+   :ensure t)
+ #+END_SRC
+
+ #+RESULTS:
 
 ** treemacs
  #+begin_src emacs-lisp
@@ -386,7 +418,14 @@
    (helm-flyspell-correct))
 
  (evil-define-key  'normal  'global  (kbd "[s") 'flyspell-helm-correct-prev)
+ (evil-define-key  'normal  'global  (kbd "M-[") 'flyspell-auto-correct-previous-word)
+ (evil-define-key  'normal  'global  (kbd "M-å") 'flyspell-auto-correct-previous-word)
+ (evil-define-key  'insert  'global  (kbd "M-[") 'flyspell-auto-correct-previous-word)
+ (evil-define-key  'insert  'global  (kbd "M-å") 'flyspell-auto-correct-previous-word)
+ (evil-define-key  'normal  'global  (kbd "ås") 'flyspell-helm-correct-prev)
  (evil-define-key  'normal  'global  (kbd "]s") 'flyspell-helm-correct-next)
+ (evil-define-key  'normal  'global  (kbd "¨s") 'flyspell-helm-correct-next)
+ (evil-define-key  'normal  'global  (kbd "§") 'evil-invert-char)
  
  #+END_SRC
 ** all the icons
@@ -531,7 +570,7 @@
  (use-package company
  :ensure t
  :init
- (setq company-minimum-prefix-length 3)
+ (setq company-minimum-prefix-length 1)
  (setq company-auto-complete nil)
  (setq company-idle-delay 0)
  (setq company-require-match 'never)
@@ -578,4 +617,27 @@
    (spaceline-toggle-buffer-size-off)
    (spaceline-toggle-evil-state-on))
 
+ #+END_SRC
+
+** magit
+
+ #+BEGIN_SRC emacs-lisp
+ (use-package magit  :ensure t)
+ (use-package evil-magit :ensure t)
+ #+END_SRC
+** ox-pandoc
+ #+BEGIN_SRC emacs-lisp
+ (use-package ox-pandoc  :ensure t)
+ #+END_SRC
+
+* email with images
+ #+BEGIN_SRC emacs-lisp
+ (defun org-html--format-image (source attributes info)
+  (format "<img src=\"data:image/%s;base64,%s\"%s />"
+      (or (file-name-extension source) "")
+      (base64-encode-string
+       (with-temp-buffer
+	 (insert-file-contents-literally source)
+	 (buffer-string)))
+      (file-name-nondirectory source)))
  #+END_SRC
