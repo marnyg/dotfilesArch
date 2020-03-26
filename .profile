@@ -43,6 +43,6 @@ export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 source /home/mar/.config/icons
 source /home/mar/.config/fzfcommands
 
-if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -le 3 ]]; then
+if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -le 3 ]] && [ -z "$SSH_CLIENT" ]; then
   exec startx
 fi
