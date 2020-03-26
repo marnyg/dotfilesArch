@@ -108,6 +108,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
  alias vim="nvim"
-source /home/mar/.icons
-source /home/mar/.fzfcommands
+source /home/mar/.config/icons
+source /home/mar/.config/fzfcommands
 
