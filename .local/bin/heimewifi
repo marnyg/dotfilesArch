@@ -1,0 +1,8 @@
+#! /bin/bash
+
+sudo rfkill unblock all
+sudo ip link set wlan0 up
+sudo iwconfig wlan0 essid Heime
+echo link up and connected to heime
+echo running dhclient
+sudo dhclient
