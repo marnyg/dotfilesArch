@@ -1,0 +1,643 @@
+
+* basics
+** Setup package repos 
+ #+BEGIN_SRC emacs-lisp
+ ;; Package configs
+ (require 'package)
+ (setq package-enable-at-startup nil)
+ (setq package-archives '(("org"   . "http://orgmode.org/elpa/")
+                          ("gnu"   . "http://elpa.gnu.org/packages/")
+                          ("melpa" . "https://melpa.org/packages/")))
+ (package-initialize)
+
+ #+END_SRC
+** set registers 
+ #+BEGIN_SRC emacs-lisp
+ (set-register ?e (cons 'file "~/.emacs.d/init.el"))
+ (set-register ?r (cons 'file "~/.emacs.d"))
+ (set-register ?t (cons 'file "~/notes/org/todo.org"))
+ (set-register ?o (cons 'file "~/notes/org/"))
+
+ #+END_SRC
+
+** Some term enhancement
+ #+BEGIN_SRC emacs-lisp
+ (defadvice term-sentinel (around my-advice-term-sentinel (proc msg))
+   (if (memq (process-status proc) '(signal exit))
+       (let ((buffer (process-buffer proc)))
+         ad-do-it
+         (kill-buffer buffer))
+     ad-do-it))
+ (ad-activate 'term-sentinel)
+
+ (defadvice ansi-term (before force-bash)
+   (interactive (list "/bin/zsh")))
+ (ad-activate 'ansi-term)
+
+ ;; Keybinding for term mode
+ (add-hook 'term-mode
+           (lambda () (global-set-key (kbd "s-v") 'term-paste)))
+
+ #+END_SRC
+
+** random stuff
+ #+BEGIN_SRC emacs-lisp
+ ;; Other configs
+ (setq make-backup-files nil)
+ (setq auto-save-default nil)
+
+ ;; Splash Screen
+ (setq inhibit-startup-screen t)
+ (setq initial-scratch-message ";; Happy Hacking")
+
+ ;; Show matching parens
+ (setq show-paren-delay 0)
+ (show-paren-mode  1)
+ 
+ #+END_SRC
+
+** electric-pair evrywher
+ #+BEGIN_SRC emacs-lisp
+ ;;auto closes quotes and parantasys
+(define-globalized-minor-mode my-global-rainbow-mode electric-pair-mode
+  (lambda () (electric-pair-mode 1)))
+
+(my-global-rainbow-mode 1)
+ #+END_SRC
+** UI settings
+ #+BEGIN_SRC emacs-lisp
+
+ ;; UI configurations
+ (scroll-bar-mode -1)
+ (tool-bar-mode   -1)
+ (tooltip-mode    -1)
+ (setq frame-resize-pixelwise t)
+ (dotimes (n 3)
+   (toggle-frame-maximized))
+ (menu-bar-mode   -1)
+ (global-linum-mode 1)
+ (add-to-list 'default-frame-alist '(font . "Iosevka-11"))
+ (add-to-list 'default-frame-alist '(height . 24))
+ (add-to-list 'default-frame-alist '(width . 80))
+
+ #+END_SRC
+ END_SRC
+
+** theme
+ #+BEGIN_SRC emacs-lisp
+ ;; Theme
+ (use-package doom-themes
+   :ensure t
+   :config
+   (load-theme 'doom-one t))
+
+ #+END_SRC
+** keybindings
+ #+BEGIN_SRC emacs-lisp
+ ;; Paragraph movement
+ (global-set-key (kbd "M-n") 'forward-paragraph)
+ (global-set-key (kbd "M-p") 'backward-paragraph)
+ (global-set-key (kbd "M-a") 'ace-window)
+
+
+ #+END_SRC
+** copy paste
+ #+BEGIN_SRC emacs-lisp
+ (setq x-select-enable-primary t)
+ #+END_SRC
+
+* packages
+** orgmode config
+ #+BEGIN_SRC emacs-lisp
+ ;; OrgMode Configs
+ (setq org-html-validation-link nil)
+ (setq org-clock-sound "/usr/share/xpra/bell.wav") 
+ (setq org-enforce-todo-dependencies t)
+ (setq org-todo-keywords
+       '((sequence "TODO" "HOLD" "NEXT" "|" "DONE")))
+ (setq org-todo-keyword-faces
+       '(("TODO"    . "blue")
+	 ("NEXT"    . "yellow")
+	 ("HOLD"    . "red")
+	 ("DONE"    . "green")))
+ (setq
+  ;; Default directory for org files
+  org-directory "~/notes/org"
+  ;; Directory for notes/tasks to be refiled
+  org-default-notes-file (concat org-directory "/refile.org")
+  ;; Allows to store agenda files in their appropriate files.
+  ;; This is useful when per project task lists are used.
+  ;; Only show level 1 headings for refiling (level 2 are the task headers)
+  org-refile-targets (quote ((nil :maxlevel . 1)
+ 			       (org-agenda-files :maxlevel . 1)))
+  ;; Org agenda files read from here
+  org-agenda-files (list org-directory)
+  )
+ (define-key global-map (kbd "C-c t")
+   (lambda () (interactive) (org-capture nil "t")))
+       
+ (define-key global-map (kbd "C-c c")
+   (lambda () (interactive) (org-capture nil )))
+      
+ (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((python . t) (shell . t)))
+   
+ (defun my-org-confirm-babel-evaluate (lang body)
+   (not (member lang '("C" "clojure" "shell" "python" "plantuml"))))
+ (setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
+ 
+ (add-hook 'org-babel-after-execute-hook 'org-redisplay-inline-images)
+ 
+ (defun my-org-mode-settings ()
+   (toggle-word-wrap)
+   (toggle-truncate-lines))
+(add-hook 'org-mode-hook 'my-org-mode-settings)
+ 
+(define-key global-map (kbd "M-v")
+   (lambda () (interactive) (org-babel-execute-src-block)))
+ #+END_SRC
+** org capture templates
+ #+BEGIN_SRC emacs-lisp
+
+ (setq org-capture-templates
+       '(("t" "Todo" entry (file "~/notes/org/inbox.org")
+          "* TODO %?\n  %i\n  %a")
+         ("j" "Journal" entry (file+datetree "~/notes/personal/journal.org")
+          "* %?\nEntered on %U\n  %i\n  %a"))) 
+ (define-key global-map (kbd "C-c x")
+   (lambda () (interactive) (org-capture)))
+ #+END_SRC
+** htmlize
+ #+BEGIN_SRC emacs-lisp
+ 
+ (use-package htmlize
+   :ensure t)
+ #+END_SRC
+
+ #+RESULTS:
+
+** treemacs
+ #+begin_src emacs-lisp
+
+ ;;treemacs
+ (use-package treemacs
+   :ensure t
+   :defer t
+   :init
+   (with-eval-after-load 'winum
+     (define-key winum-keymap (kbd "M-0") #'treemacs-select-window))
+   :config
+   (progn
+     (setq treemacs-collapse-dirs                 (if treemacs-python-executable 3 0)
+           treemacs-deferred-git-apply-delay      0.5
+           treemacs-directory-name-transformer    #'identity
+           treemacs-display-in-side-window        t
+           treemacs-eldoc-display                 t
+           treemacs-file-event-delay              5000
+           treemacs-file-extension-regex          treemacs-last-period-regex-value
+           treemacs-file-follow-delay             0.2
+           treemacs-file-name-transformer         #'identity
+           treemacs-follow-after-init             t
+           treemacs-git-command-pipe              ""
+           treemacs-goto-tag-strategy             'refetch-index
+           treemacs-indentation                   2
+           treemacs-indentation-string            " "
+           treemacs-is-never-other-window         nil
+           treemacs-max-git-entries               5000
+           treemacs-missing-project-action        'ask
+           treemacs-no-png-images                 nil
+           treemacs-no-delete-other-windows       t
+           treemacs-project-follow-cleanup        nil
+           treemacs-persist-file                  (expand-file-name ".cache/treemacs-persist" user-emacs-directory)
+           treemacs-position                      'left
+           treemacs-recenter-distance             0.1
+           treemacs-recenter-after-file-follow    nil
+           treemacs-recenter-after-tag-follow     nil
+           treemacs-recenter-after-project-jump   'always
+           treemacs-recenter-after-project-expand 'on-distance
+           treemacs-show-cursor                   nil
+           treemacs-show-hidden-files             t
+           treemacs-silent-filewatch              nil
+           treemacs-silent-refresh                nil
+           treemacs-sorting                       'alphabetic-asc
+           treemacs-space-between-root-nodes      nil
+           treemacs-tag-follow-cleanup            t
+           treemacs-tag-follow-delay              1.5
+           treemacs-user-mode-line-format         nil
+           treemacs-width                         35)
+
+     ;; The default width and height of the icons is 22 pixels. If you are
+     ;; using a Hi-DPI display, uncomment this to double the icon size.
+     ;;(treemacs-resize-icons 44)
+
+     (treemacs-follow-mode t)
+     (treemacs-filewatch-mode t)
+     (treemacs-fringe-indicator-mode t)
+     (pcase (cons (not (null (executable-find "git")))
+                  (not (null treemacs-python-executable)))
+       (`(t . t)
+	(treemacs-git-mode 'deferred))
+       (`(t . _)
+	(treemacs-git-mode 'simple))))
+   :bind
+   (:map global-map
+         ("M-0"       . treemacs-select-window)
+         ("C-x t 1"   . treemacs-delete-other-windows)
+         ("C-x t t"   . treemacs)
+         ("C-x t B"   . treemacs-bookmark)
+         ("C-x t C-t" . treemacs-find-file)
+         ("C-x t M-t" . treemacs-find-tag)))
+
+ (use-package treemacs-evil
+   :after treemacs evil
+   :ensure t)
+
+ (use-package treemacs-projectile
+   :after treemacs projectile
+   :ensure t)
+
+ (use-package treemacs-icons-dired
+   :after treemacs dired
+   :ensure t
+   :config (treemacs-icons-dired-mode))
+
+ (use-package treemacs-magit
+   :after treemacs magit
+   :ensure t)
+
+ (use-package treemacs-persp
+   :after treemacs persp-mode
+   :ensure t
+   :config (treemacs-set-scope-type 'Perspectives))
+ 
+ #+END_SRC
+** Evil mode 
+#+BEGIN_SRC emacs-lisp
+;; Vim mode
+(use-package evil
+  :ensure t
+  :init
+  (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
+  (setq evil-want-keybinding nil)
+  :config
+  (evil-mode 1))
+
+(use-package evil-escape
+  :ensure t
+  :init
+  (setq-default evil-escape-key-sequence "jk")
+  :config
+  (evil-escape-mode 1))
+
+(use-package evil-collection
+  :after evil
+  :ensure t
+  :config
+  (evil-collection-init))
+;; Anzu for search matching
+(use-package anzu
+  :ensure t
+  :config
+  (global-anzu-mode 1)
+  (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp)
+  (global-set-key [remap query-replace] 'anzu-query-replace))
+
+#+END_SRC
+** evil-org
+ #+BEGIN_SRC emacs-lisp
+ (use-package evil-org
+   :ensure t
+   :after org
+   :config
+   (add-hook 'org-mode-hook 'evil-org-mode)
+   (add-hook 'evil-org-mode-hook
+             (lambda ()
+               (evil-org-set-key-theme)))
+   (require 'evil-org-agenda)
+   (evil-org-agenda-set-keys))
+ ;;keybind
+ (global-set-key (kbd "C-c a") 'org-agenda)
+
+ ;; autosave org evry 30 sec
+ (add-hook 'auto-save-hook 'org-save-all-org-buffers)
+
+ #+END_SRC
+** helm
+ #+BEGIN_SRC emacs-lisp
+ ;; Helm
+ (use-package helm
+   :ensure t
+   :init
+   (setq helm-M-x-fuzzy-match t
+	 helm-mode-fuzzy-match t
+	 helm-buffers-fuzzy-matching t
+	 helm-recentf-fuzzy-match t
+	 helm-locate-fuzzy-match t
+	 helm-semantic-fuzzy-match t
+	 helm-imenu-fuzzy-match t
+	 helm-completion-in-region-fuzzy-match t
+	 helm-candidate-number-list 80
+	 helm-split-window-in-side-p t
+	 helm-move-to-line-cycle-in-source t
+	 helm-echo-input-in-header-line t
+	 helm-autoresize-max-height 0
+	 helm-autoresize-min-height 20)
+   :config
+   (helm-mode 1))
+ (define-key (current-global-map) [remap find-file] 'helm-find-files)
+ (define-key (current-global-map) [remap list-buffers] 'helm-mini)
+ (define-key (current-global-map) [remap execute-extended-command] 'helm-M-x)
+
+ ;; helm fzf
+ ;;(use-package helm-fuzzy-find :ensure t)
+ ;;(use-package helm-fuzzy :ensure t)
+ (use-package helm-fuzzier :ensure t)
+ (helm-fuzzier-mode 1)
+
+ ;; RipGrep
+ (use-package helm-rg :ensure t)
+
+ ;; RipGrep
+ (use-package helm-flyspell :ensure t) 
+ ;; Projectile
+ (use-package projectile
+   :ensure t
+   :init
+   (setq projectile-require-project-root nil)
+   :config
+   (projectile-mode 1))
+
+ ;; Helm Projectile
+ (use-package helm-projectile
+   :ensure t
+   :init
+   (setq helm-projectile-fuzzy-match t)
+   :config
+   (helm-projectile-on))
+
+ #+END_SRC
+** spelling
+ #+BEGIN_SRC emacs-lisp
+ ;; spelling
+ (add-to-list 'ispell-local-dictionary-alist '("norsk-hunspell"
+                                               "[[:alpha:]]"
+                                               "[^[:alpha:]]"
+                                               "[']"
+                                               t
+                                               ("-d" "nb_NO"); Dictionary file name
+                                               nil
+                                               iso-8859-1))
+
+ (add-to-list 'ispell-local-dictionary-alist '("english-hunspell"
+                                               "[[:alpha:]]"
+                                               "[^[:alpha:]]"
+                                               "[']"
+                                               t
+                                               ("-d" "en_US-large")
+                                               nil
+                                               iso-8859-1))
+ (with-eval-after-load "ispell"
+   (setq ispell-program-name "hunspell") 
+   (ispell-set-spellchecker-params)
+   (ispell-hunspell-add-multi-dic "nb_NO,en_US-large")
+   (setq ispell-dictionary "nb_NO,en_US-large")
+   )
+
+ (define-key flyspell-mode-map (kbd "C-;") 'helm-flyspell-correct) 
+ (define-key flyspell-mode-map (kbd "C-Ø") 'helm-flyspell-correct) 
+ (define-key flyspell-mode-map (kbd "C-ø") 'helm-flyspell-correct)
+ (defun flyspell-helm-correct-prev ()
+   (interactive)
+   (evil-prev-flyspell-error 1)
+   (helm-flyspell-correct))
+
+ (defun flyspell-helm-correct-next ()
+   (interactive)
+   (evil-next-flyspell-error 1)
+   (helm-flyspell-correct))
+
+ (evil-define-key  'normal  'global  (kbd "[s") 'flyspell-helm-correct-prev)
+ (evil-define-key  'normal  'global  (kbd "M-[") 'flyspell-auto-correct-previous-word)
+ (evil-define-key  'normal  'global  (kbd "M-å") 'flyspell-auto-correct-previous-word)
+ (evil-define-key  'insert  'global  (kbd "M-[") 'flyspell-auto-correct-previous-word)
+ (evil-define-key  'insert  'global  (kbd "M-å") 'flyspell-auto-correct-previous-word)
+ (evil-define-key  'normal  'global  (kbd "ås") 'flyspell-helm-correct-prev)
+ (evil-define-key  'normal  'global  (kbd "]s") 'flyspell-helm-correct-next)
+ (evil-define-key  'normal  'global  (kbd "¨s") 'flyspell-helm-correct-next)
+ (evil-define-key  'normal  'global  (kbd "§") 'evil-invert-char)
+ 
+ #+END_SRC
+** all the icons
+ #+BEGIN_SRC emacs-lisp
+ ;; All The Icons
+ (use-package all-the-icons :ensure t)
+
+ #+END_SRC
+** neotree (not active)
+ #+BEGIN_SRC emacs-lisp
+ ;; NeoTree
+ ;;(use-package neotree
+ ;;  :ensure t
+ ;;  :init
+ ;;  (setq neo-theme (if (display-graphic-p) 'icons 'arrow)))
+
+
+
+ ;;(evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-quick-look) 
+ ;;(evil-define-key 'normal neotree-mode-map (kbd "backtab") 'neotree-quick-look)
+ ;;(evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
+ ;;(evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
+ ;;(evil-define-key 'normal neotree-mode-map (kbd "g") 'neotree-refresh)
+ ;;(evil-define-key 'normal neotree-mode-map (kbd "n") 'neotree-next-line)
+ ;;(evil-define-key 'normal neotree-mode-map (kbd "p") 'neotree-previous-line)
+ ;;(evil-define-key 'normal neotree-mode-map (kbd "A") 'neotree-stretch-toggle)
+ ;;(evil-define-key 'normal neotree-mode-map (kbd "H") 'neotree-hidden-file-toggle)
+
+ ;;(setq neo-theme (if (display-graphic-p) 'icons 'arrow)) 
+
+ #+END_SRC
+** whitch key
+ #+BEGIN_SRC emacs-lisp
+ ;; Which Key
+ (use-package which-key
+   :ensure t
+   :init
+   (setq which-key-separator " ")
+   (setq which-key-prefix-prefix "+")
+   :config
+   (which-key-mode))
+
+ #+END_SRC
+
+** general
+ #+BEGIN_SRC emacs-lisp
+ ;; Custom keybinding
+ (use-package general
+   :ensure t
+   :config (general-define-key
+   :states '(normal visual insert emacs)
+   :prefix "SPC"
+   :non-normal-prefix "M-SPC"
+   "/"   '(helm-projectile-rg :which-key "ripgrep")
+   "TAB" '(switch-to-prev-buffer :which-key "previous buffer")
+   "SPC" '(helm-M-x :which-key "M-x")
+   "pf"  '(helm-projectile-find-file :which-key "find files")
+   "pp"  '(helm-projectile-switch-project :which-key "switch project")
+   "pb"  '(helm-projectile-switch-to-buffer :which-key "switch buffer")
+   "pr"  '(helm-show-kill-ring :which-key "show kill ring")
+   ;; Buffers
+   "bb"  '(helm-mini :which-key "buffers list")
+   ;; Window
+   "wl"  '(windmove-right :which-key "move right")
+   "wh"  '(windmove-left :which-key "move left")
+   "wk"  '(windmove-up :which-key "move up")
+   "wj"  '(windmove-down :which-key "move bottom")
+   "w/"  '(split-window-right :which-key "split right")
+   "w-"  '(split-window-below :which-key "split bottom")
+   "wx"  '(delete-window :which-key "delete window")
+   "qz"  '(delete-frame :which-key "delete frame")
+   "qq"  '(kill-emacs :which-key "quit")
+   ;; NeoTree
+ ;;  "ft"  '(neotree-toggle :which-key "toggle neotree")
+ ;;  "ff"  '(helm-find-files :which-key "find file")
+   ;; Others
+   "at"  '(ansi-term :which-key "open terminal")
+ ))
+
+ #+END_SRC
+** org bullets
+ #+BEGIN_SRC emacs-lisp
+ ;;Org bullets
+ (use-package org-bullets :ensure t  ) 
+ (require 'org-bullets) 
+ (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+ 
+ #+END_SRC
+** Fancy titlebar for MacOS
+ #+BEGIN_SRC emacs-lisp
+ ;; Fancy titlebar for MacOS
+ (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+ (add-to-list 'default-frame-alist '(ns-appearance . dark))
+ (setq ns-use-proxy-icon  nil)
+ (setq frame-title-format nil)
+
+ #+END_SRC
+** flycheck
+ #+BEGIN_SRC emacs-lisp
+ ;; Flycheck
+ (use-package flycheck
+   :ensure t
+   :init (global-flycheck-mode))
+
+ (add-hook 'org-mode-hook 'turn-on-flyspell)
+ #+END_SRC
+** c# mode
+ #+BEGIN_SRC emacs-lisp
+
+ (use-package csharp-mode
+   :ensure t
+   )
+ #+END_SRC
+** LSP
+ #+BEGIN_SRC emacs-lisp
+ ;; LSP
+ (use-package lsp-mode
+   ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
+   :init (setq lsp-keymap-prefix "C-l")
+   :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
+          (python-mode . lsp)
+          (c++-mode . lsp)
+          (csharp-mode . lsp)
+          (rust-mode . lsp)
+          (javascript-mode . lsp)
+          ;;(typescript . lsp)
+          ;; if you want which-key integration
+          (lsp-mode . lsp-enable-which-key-integration))
+   :commands lsp)
+
+ (use-package lsp-treemacs :ensure t)
+
+ (use-package lsp-ui
+   :ensure t
+   :init
+   (add-hook 'lsp-mode-hook 'lsp-ui-mode))
+
+ #+END_SRC
+** company
+ #+BEGIN_SRC emacs-lisp
+ ;; Company mode
+ (use-package company
+ :ensure t
+ :init
+ (setq company-minimum-prefix-length 1)
+ (setq company-auto-complete nil)
+ (setq company-idle-delay 0)
+ (setq company-require-match 'never)
+ (setq company-frontends
+   '(company-pseudo-tooltip-unless-just-one-frontend
+     company-preview-frontend
+     company-echo-metadata-frontend))
+ (setq tab-always-indent 'complete)
+ (defvar completion-at-point-functions-saved nil)
+ :config
+ (global-company-mode 1)
+ (define-key company-active-map (kbd "TAB") 'company-complete-common-or-cycle)
+ (define-key company-active-map (kbd "<tab>") 'company-complete-common-or-cycle)
+ (define-key company-active-map (kbd "S-TAB") 'company-select-previous)
+ (define-key company-active-map (kbd "<backtab>") 'company-select-previous)
+ (define-key company-mode-map [remap indent-for-tab-command] 'company-indent-for-tab-command)
+ (defun company-indent-for-tab-command (&optional arg)
+   (interactive "P")
+   (let ((completion-at-point-functions-saved completion-at-point-functions)
+    	 (completion-at-point-functions '(company-complete-common-wrapper)))
+	 (indent-for-tab-command arg)))
+
+ (defun company-complete-common-wrapper ()
+	 (let ((completion-at-point-functions completion-at-point-functions-saved))
+	 (company-complete-common))))
+
+ (use-package company-lsp
+ :ensure t
+ :init
+ (push 'company-lsp company-backends))
+ 
+ #+END_SRC
+
+** powerline
+ #+BEGIN_SRC emacs-lisp
+ ;; Powerline
+ (use-package spaceline
+   :ensure t
+   :init
+   (setq powerline-default-separator 'slant)
+   :config
+   (spaceline-emacs-theme)
+   (spaceline-toggle-minor-modes-off)
+   (spaceline-toggle-buffer-size-off)
+   (spaceline-toggle-evil-state-on))
+
+ #+END_SRC
+
+** magit
+
+ #+BEGIN_SRC emacs-lisp
+ (use-package magit  :ensure t)
+ (use-package evil-magit :ensure t)
+ #+END_SRC
+** ox-pandoc
+ #+BEGIN_SRC emacs-lisp
+ (use-package ox-pandoc  :ensure t)
+ #+END_SRC
+
+* email with images
+ #+BEGIN_SRC emacs-lisp
+ (defun org-html--format-image (source attributes info)
+  (format "<img src=\"data:image/%s;base64,%s\"%s />"
+      (or (file-name-extension source) "")
+      (base64-encode-string
+       (with-temp-buffer
+	 (insert-file-contents-literally source)
+	 (buffer-string)))
+      (file-name-nondirectory source)))
+ #+END_SRC
