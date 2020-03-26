@@ -82,6 +82,7 @@ zplug load 'wfxr/forgit'
 
 
 source $ZSH/oh-my-zsh.sh
+source /home/mar/.fzfcommands
 
 # User configuration
 
