@@ -1,0 +1,13 @@
+#! /bin/sh
+
+for file in ./diffs/* ; do
+    name=$(echo $file | sed s-./diffs/-- |sed s/.diff//)
+    git checkout -b $name
+    git apply $file
+    git add .
+    git commit -m $name
+
+    git checkout master
+done
+
+
