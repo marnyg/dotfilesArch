@@ -59,10 +59,8 @@
 ** electric-pair evrywher
  #+BEGIN_SRC emacs-lisp
  ;;auto closes quotes and parantasys
-(define-globalized-minor-mode my-global-rainbow-mode electric-pair-mode
-  (lambda () (electric-pair-mode 1)))
-
-(my-global-rainbow-mode 1)
+;;(electric-pair-mode 1)
+(electric-pair-mode 0)
  #+END_SRC
 ** UI settings
  #+BEGIN_SRC emacs-lisp
@@ -97,7 +95,7 @@
  ;; Paragraph movement
  (global-set-key (kbd "M-n") 'forward-paragraph)
  (global-set-key (kbd "M-p") 'backward-paragraph)
- (global-set-key (kbd "M-a") 'ace-window)
+ (global-set-key (kbd "M-o") 'ace-window)
 
 
  #+END_SRC
@@ -105,6 +103,40 @@
  #+BEGIN_SRC emacs-lisp
  (setq x-select-enable-primary t)
  #+END_SRC
+** tramp
+ #+BEGIN_SRC emacs-lisp
+; (add-to-list 'tramp-remote-process-environment
+ ;            (format "DISPLAY=%s" (getenv "DISPLAY")))
+    (setq tramp-default-method "ssh")
+
+ #+END_SRC
+** calender
+ #+BEGIN_SRC emacs-lisp
+(copy-face font-lock-constant-face 'calendar-iso-week-face)
+(set-face-attribute 'calendar-iso-week-face nil
+                    :height 0.7)
+(setq calendar-intermonth-text
+      '(propertize
+        (format "%2d"
+                (car
+                 (calendar-iso-from-absolute
+                  (calendar-absolute-from-gregorian (list month day year)))))
+        'font-lock-face 'calendar-iso-week-face))
+ #+END_SRC
+
+ #+RESULTS:
+ | propertize | (format %2d (car (calendar-iso-from-absolute (calendar-absolute-from-gregorian (list month day year))))) | (quote font-lock-face) | (quote calendar-iso-week-face) |
+** yes-or-no-prompts
+ #+BEGIN_SRC emacs-lisp
+ (defalias 'yes-or-no-p 'y-or-n-p)
+ #+END_SRC
+** ace-window
+ #+BEGIN_SRC emacs-lisp
+ (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+ #+END_SRC
+
+ #+RESULTS:
+ | 97 | 115 | 100 | 102 | 103 | 104 | 106 | 107 | 108 |
 
 * packages
 ** orgmode config
@@ -114,7 +146,10 @@
  (setq org-clock-sound "/usr/share/xpra/bell.wav") 
  (setq org-enforce-todo-dependencies t)
  (setq org-todo-keywords
-       '((sequence "TODO" "HOLD" "NEXT" "|" "DONE")))
+       '(
+       (sequence "TODO(t)" "BACKLOG(b)" "NEXT" "|" "DONE(d)")
+       ;(sequence "BLOCKED" "HOLD" "WAITING" "|"  "READY(r)")
+       ))
  (setq org-todo-keyword-faces
        '(("TODO"    . "blue")
 	 ("NEXT"    . "yellow")
@@ -168,6 +203,106 @@
  (define-key global-map (kbd "C-c x")
    (lambda () (interactive) (org-capture)))
  #+END_SRC
+** org agenda
+ #+BEGIN_SRC emacs-lisp
+ (setq org-agenda-span 10)
+ (setq org-agenda-custom-commands 
+      '(
+        ("w" "Work" alltodo "" ;; (1) (2) (3) (4)
+         ((org-agenda-files '("~/unity-vr-bachelor/todo.org")) ;; (5)
+          (org-agenda-sorting-strategy '(priority-up effort-down))) ;; (5) cont.
+         ) ;; (6)
+        ;; ...other commands here
+	
+	("W" "Weekly Review"
+         ((agenda "" ((org-agenda-span 7))); review upcoming deadlines and appointments
+                                           ; type "l" in the agenda to review logged items 
+          (stuck "") ; review stuck projects as designated by org-stuck-projects
+          (todo "PROJECT") ; review all projects (assuming you use todo keywords to designate projects)
+          (todo "MAYBE") ; review someday/maybe items
+          (todo "WAITING"))) ; review waiting items
+         ;; ...other commands here
+	 
+	 ("x" "With deadline columns" alltodo ""
+         ((org-agenda-overriding-columns-format "%20ITEM %DEADLINE")
+         (org-agenda-view-columns-initially t)))
+         ;; ...other commands here
+	 
+	 ("d" "Upcoming deadlines" agenda "" 
+                ((org-agenda-time-grid nil)
+                 (org-deadline-warning-days 365)        ;; [1]
+                 (org-agenda-entry-types '(:deadline))  ;; [2]
+                 ))
+         ;; ...other commands here
+	 
+	 ("g" . "GTD contexts")
+        ("go" "Office" tags-todo "office")
+        ("gc" "Computer" tags-todo "computer")
+        ("gp" "Phone" tags-todo "phone")
+        ("gh" "Home" tags-todo "home")
+        ("ge" "Errands" tags-todo "errands")
+        ("G" "GTD Block Agenda"
+         ((tags-todo "office")
+          (tags-todo "computer")
+          (tags-todo "phone")
+          (tags-todo "home")
+          (tags-todo "errands"))
+         nil                      ;; i.e., no local settings
+         ("~/next-actions.html")) ;; exports block to this file with C-c a e
+       ;; ..other commands here
+       
+       ("p" . "Priorities")
+        ("pa" "A items" tags-todo "+PRIORITY=\"A\"")
+        ("pb" "B items" tags-todo "+PRIORITY=\"B\"")
+        ("pc" "C items" tags-todo "+PRIORITY=\"C\"")
+        ;; ...other commands here
+	
+	("c" "Weekly schedule" agenda ""
+        ((org-agenda-span 7)           ;; agenda will start in week view
+        (org-agenda-repeating-timestamp-show-all t)   ;; ensures that repeating events appear on all relevant dates
+        (org-agenda-skip-function '(org-agenda-skip-entry-if 'deadline 'scheduled))))  
+        ;; limits agenda view to timestamped items
+        ;; ...other commands here
+	
+	("h" "Daily habits" 
+         ((agenda ""))
+         ((org-agenda-show-log t)
+          (org-agenda-ndays 7)
+          (org-agenda-log-mode-items '(state))
+          (org-agenda-skip-function '(org-agenda-skip-entry-if 'notregexp ":habit:"))))
+        ;; other commands here
+	
+	("P" "Printed agenda"
+         ((agenda "" ((org-agenda-span 7)                      ;; overview of appointments
+                      (org-agenda-start-on-weekday nil)         ;; calendar begins today
+                      (org-agenda-repeating-timestamp-show-all t)
+                      (org-agenda-entry-types '(:timestamp :sexp))))
+          (agenda "" ((org-agenda-span 1)                      ; daily agenda
+                      (org-deadline-warning-days 7)            ; 7 day advanced warning for deadlines
+                      (org-agenda-todo-keyword-format "[ ]")
+                      (org-agenda-scheduled-leaders '("" ""))
+                      (org-agenda-prefix-format "%t%s")))
+          (todo "TODO"                                          ;; todos sorted by context
+                ((org-agenda-prefix-format "[ ] %T: ")
+                 (org-agenda-sorting-strategy '(tag-up priority-down))
+                 (org-agenda-todo-keyword-format "")
+                 (org-agenda-overriding-header "\nTasks by Context\n------------------\n"))))
+         ((org-agenda-with-colors nil)
+          (org-agenda-compact-blocks t)
+          (org-agenda-remove-tags t)
+          (ps-number-of-columns 2)
+           (ps-landscape-mode t))
+         ("~/agenda.ps"))
+        ;; other commands go here
+        ))
+ #+END_SRC
+
+ #+RESULTS:
+ : ((w Work alltodo  ((org-agenda-files (quote (~/unity-vr-bachelor/todo.org))) (org-agenda-sorting-strategy (quote (priority-up effort-down))))) (W Weekly Review ((agenda  ((org-agenda-span 7))) (stuck ) (todo PROJECT) (todo MAYBE) (todo WAITING))) (x With deadline columns alltodo  ((org-agenda-overriding-columns-format %20ITEM %DEADLINE) (org-agenda-view-columns-initially t))) (d Upcoming deadlines agenda  ((org-agenda-time-grid nil) (org-deadline-warning-days 365) (org-agenda-entry-types (quote (:deadline))))) (g . GTD contexts) (go Office tags-todo office) (gc Computer tags-todo computer) (gp Phone tags-todo phone) (gh Home tags-todo home) (ge Errands tags-todo errands) (G GTD Block Agenda ((tags-todo office) (tags-todo computer) (tags-todo phone) (tags-todo home) (tags-todo errands)) nil (~/next-actions.html)) (p . Priorities) (pa A items tags-todo +PRIORITY="A") (pb B items tags-todo +PRIORITY="B") (pc C items tags-todo +PRIORITY="C") (c Weekly schedule agenda  ((org-agenda-span 7) (org-agenda-repeating-timestamp-show-all t) (org-agenda-skip-function (quote (org-agenda-skip-entry-if (quote deadline) (quote scheduled)))))) (h Daily habits ((agenda )) ((org-agenda-show-log t) (org-agenda-ndays 7) (org-agenda-log-mode-items (quote (state))) (org-agenda-skip-function (quote (org-agenda-skip-entry-if (quote notregexp) :habit:))))) (P Printed agenda ((agenda  ((org-agenda-span 7) (org-agenda-start-on-weekday nil) (org-agenda-repeating-timestamp-show-all t) (org-agenda-entry-types (quote (:timestamp :sexp))))) (agenda  ((org-agenda-span 1) (org-deadline-warning-days 7) (org-agenda-todo-keyword-format [ ]) (org-agenda-scheduled-leaders (quote ( ))) (org-agenda-prefix-format %t%s))) (todo TODO ((org-agenda-prefix-format [ ] %T: ) (org-agenda-sorting-strategy (quote (tag-up priority-down))) (org-agenda-todo-keyword-format ) (org-agenda-overriding-header 
+ : Tasks by Context
+ : ------------------
+ : )))) ((org-agenda-with-colors nil) (org-agenda-compact-blocks t) (org-agenda-remove-tags t) (ps-number-of-columns 2) (ps-landscape-mode t)) (~/agenda.ps)))
+
 ** htmlize
  #+BEGIN_SRC emacs-lisp
  
@@ -270,8 +405,29 @@
    :after treemacs persp-mode
    :ensure t
    :config (treemacs-set-scope-type 'Perspectives))
- 
  #+END_SRC
+ 
+#+BEGIN_SRC emacs-lisp
+(with-eval-after-load 'treemacs
+
+  (defun treemacs-ignore-example (filename absolute-path)
+    (or (string-equal filename "__pycache__")
+        (string-equal filename ".mypy_cache")
+        (string-equal filename ".idea")
+        (string-equal filename ".vscode")
+        (string-prefix-p "/x/y/z/" absolute-path)
+        (string-suffix-p "meta" filename)))
+
+  (add-to-list 'treemacs-ignored-file-predicates #'treemacs-ignore-example))
+    
+ (with-eval-after-load 'treemacs
+  (add-to-list 'treemacs-pre-file-insert-predicates #'treemacs-is-file-git-ignored?))
+    
+ #+END_SRC
+
+ #+RESULTS:
+ | treemacs-is-file-git-ignored? |
+
 ** Evil mode 
 #+BEGIN_SRC emacs-lisp
 ;; Vim mode
