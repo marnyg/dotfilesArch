@@ -7,6 +7,7 @@ export PATH="$PATH:/home/mar/.local/bin"
 export BROWSER=qutebrowser
 export EDITOR=nvim
 export TERMINAL=st
+export SHELL=zsh
 
 # default jetbrains setting
 export _JAVA_AWT_WM_NONREPARENTING=1

@@ -2,15 +2,22 @@
 * basics
 ** Setup package repos 
  #+BEGIN_SRC emacs-lisp
+
  ;; Package configs
  (require 'package)
  (setq package-enable-at-startup nil)
+ (setq package-check-signature nil)
  (setq package-archives '(("org"   . "http://orgmode.org/elpa/")
                           ("gnu"   . "http://elpa.gnu.org/packages/")
                           ("melpa" . "https://melpa.org/packages/")))
- (package-initialize)
 
+
+ (package-initialize)
  #+END_SRC
+
+ #+RESULTS:
+ : ((org . http://orgmode.org/elpa/) (gnu . http://elpa.gnu.org/packages/) (melpa . https://melpa.org/packages/) (melpa . http://melpa.milkbox.net/packages/))
+
 ** set registers 
  #+BEGIN_SRC emacs-lisp
  (set-register ?e (cons 'file "~/.emacs.d/init.el"))
@@ -406,6 +413,8 @@
    :ensure t
    :config (treemacs-set-scope-type 'Perspectives))
  #+END_SRC
+
+ #+RESULTS:
  
 #+BEGIN_SRC emacs-lisp
 (with-eval-after-load 'treemacs
