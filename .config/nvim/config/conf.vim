@@ -130,7 +130,11 @@ let g:netrw_banner=0
 let g:netrw_browse_split=4
 let g:netrw_altv=1
 let g:netrw_liststyle=3
+set splitbelow
+set splitright
 
 
+""orgmode
+let g:org_agenda_files=['~/notes/org/index.org','~/notes/org/projects.org','~/notes/org/somdayMaby.org','~/notes/org/tickler.ort','~/notes/org/shopping.org']
 
 

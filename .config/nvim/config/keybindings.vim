@@ -2,9 +2,10 @@
 "" Mappings
 "*****************************************************************************
 "Taskwarrior
-noremap <Leader>t :TW <CR>
-
+"noremap <Leader>t :TW <CR>
+let maplocalleader = ";"
 "" Clean search (highlight)
+
 nnoremap <silent> <leader><space> :noh<cr>
 
 "" Open current line on GitHub
@@ -47,8 +48,10 @@ augroup FILETYPES
 augroup END
 
 "" Split
-noremap <Leader>v :Vex <CR>
-noremap <Leader>h :Sex <CR>
+"" use  <C-w>s
+"" use  <C-w>v
+""
+
 noremap ` :e. <CR>
 
 "" Buffer nav
@@ -64,25 +67,12 @@ noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <C-h> <C-w>h
 
-nnoremap <silent> <C-L> :vertical resize +10 <CR>
-nnoremap <silent> <C-H> :vertical resize -10 <CR>
+nnoremap <silent> <C-Left> :vertical resize +5 <CR>
+nnoremap <silent> <C-right> :vertical resize -5 <CR>
+nnoremap <silent> <C-Down> :resize -5 <CR>
+nnoremap <silent> <C-Up> :resize +5 <CR>
+nnoremap <space> <c-w>w
 
-nnoremap <silent> <C-]> :10winc - <CR>
-nnoremap <silent> <C-\> :10winc + <CR>
-
-
-
-"noremap <C-/> :10winc + <CR>
-"noremap <C-?> :10winc - <CR>
-"nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
-"nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
-"nnoremap <silent> <Leader>< :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
-"nnoremap <silent> <Leader>> :exe "vertical resize " . (winheight(0) * 2/3)<CR>
-
-"nnoremap <silent> <C-]> :exe "resize " . (winheight(0) * 3/2)<CR>
-"nnoremap <silent> <C-[> :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
-"nnoremap <silent> <C-\> :exe "resize " . (winheight(0) * 3/2)<CR>
-"nnoremap <silent> <C-'> :exe "resize " . (winheight(0) * 2/3)<CR>
 "" Vmap for maintain Visual Mode after shifting > and <
 vmap < <gv
 vmap > >gv
@@ -91,8 +81,4 @@ vmap > >gv
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-
-"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-"nnoremap <Leader>m :!make -C build
-"noremap <C-m> :silent w <bar> !python % <CR>
-
+map <Leader>tt :vnew term://zsh<CR>

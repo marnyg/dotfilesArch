@@ -107,7 +107,8 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
- alias vim="nvim"
+alias vim="nvim"
+alias tmux="tmux -f ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf"
 source /home/mar/.config/icons
 source /home/mar/.config/fzfcommands
 

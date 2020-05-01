@@ -35,8 +35,8 @@ Plug 'xarthurx/taskwarrior.vim'
 
 Plug 'rbgrouleff/bclose.vim' 
 "Plug 'francoiscabrol/ranger.vim'
-Plug 'rbgrouleff/bclose.vim'
 Plug 'ptzz/lf.vim'
+Plug 'jceb/vim-orgmode'
 
 
 "" Color
@@ -61,13 +61,13 @@ endif
 "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhere to h
 "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhere to h
 
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'ryanolsonx/vim-lsp-python'
-Plug 'ryanolsonx/vim-lsp-javascript'
-Plug 'mattn/vim-lsp-settings'
+"Plug 'prabirshrestha/async.vim'
+"Plug 'prabirshrestha/asyncomplete.vim'
+"Plug 'prabirshrestha/asyncomplete-lsp.vim'
+"Plug 'prabirshrestha/vim-lsp'
+"Plug 'ryanolsonx/vim-lsp-python'
+"Plug 'ryanolsonx/vim-lsp-javascript'
+"Plug 'mattn/vim-lsp-settings'
 "Plug 'OmniSharp/omnisharp-vim'
 "Plug 'w0rp/ale'
 

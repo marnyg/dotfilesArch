@@ -1,5 +1,5 @@
 #! /bin/sh
 
-MONITOR=HDMI-0
+MONITOR=DVI-I-1
 ID=$(xinput |grep "Pen Pen" | awk '$8 ~ /id/{print $8;}'|cut -d '=' -f 2)
 xinput map-to-output $ID $MONITOR
