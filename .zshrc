@@ -1,5 +1,3 @@
-[[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -84,6 +82,7 @@ zplug load 'wfxr/forgit'
 
 
 source $ZSH/oh-my-zsh.sh
+source /home/mar/.fzfcommands
 
 # User configuration
 
@@ -109,8 +108,7 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
-alias vim="nvim"
-alias tmux="tmux -f ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf"
-source /home/mar/.config/icons
-source /home/mar/.config/fzfcommands
+ alias vim="nvim"
+source /home/mar/.icons
+source /home/mar/.fzfcommands
 
