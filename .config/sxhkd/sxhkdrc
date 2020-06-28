@@ -27,6 +27,8 @@ super+w
 super+o
     st -e htop
 super+Return
+    st -e tmux
+super+slash
     st -e zsh
 super+apostrophe
     changeVolume 5%+
