@@ -57,7 +57,7 @@ set relativenumber
 set pumblend=40
 
 let no_buffers_menu=1
-silent! colorscheme molokai
+""silent! colorscheme molokai
 
 set mousemodel=popup
 set t_Co=256

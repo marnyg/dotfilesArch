@@ -23,6 +23,19 @@ nnoremap <leader>sd :DeleteSession<CR>
 nnoremap <leader>sc :CloseSession<CR>
 "" Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
+""Repl python
+
+nmap <localleader>t    <Plug>(iron-send-motion)
+vmap <localleader>v    <Plug>(iron-visual-send)
+nmap <localleader>r    <Plug>(iron-repeat-cmd)
+nmap <localleader>l    <Plug>(iron-send-line)
+nmap <localleader><CR> <Plug>(iron-cr)
+nmap <localleader>i    <plug>(iron-interrupt)
+nmap <localleader>q    <Plug>(iron-exit)
+nmap <localleader>c    <Plug>(iron-clear)
+
+
+noremap <C-P> @:<CR>
 
 
 "" Opens a tab edit command with the path of the currently edited file filled

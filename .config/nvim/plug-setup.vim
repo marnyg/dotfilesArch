@@ -34,14 +34,13 @@ Plug 'tpope/vim-surround'
 Plug 'xarthurx/taskwarrior.vim'
 
 Plug 'rbgrouleff/bclose.vim' 
-"Plug 'francoiscabrol/ranger.vim'
 Plug 'ptzz/lf.vim'
 Plug 'jceb/vim-orgmode'
 
-
+Plug 'sillybun/vim-repl'
+Plug 'hkupty/iron.nvim'
 "" Color
-Plug 'tomasr/molokai'
-
+""Plug 'tomasr/molokai'
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -49,60 +48,47 @@ else
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
   Plug 'junegunn/fzf.vim'
 endif
-"*****************************************************************************
-""deoplete
-"*****************************************************************************
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-""python    
-"Plug 'deoplete-plugins/deoplete-jedi' 
-"
-"
-"hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhere to h
-"hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhere to h
-"hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhere to h
+" Vim-Session
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-session'
 
-"Plug 'prabirshrestha/async.vim'
-"Plug 'prabirshrestha/asyncomplete.vim'
-"Plug 'prabirshrestha/asyncomplete-lsp.vim'
-"Plug 'prabirshrestha/vim-lsp'
-"Plug 'ryanolsonx/vim-lsp-python'
-"Plug 'ryanolsonx/vim-lsp-javascript'
-"Plug 'mattn/vim-lsp-settings'
-"Plug 'OmniSharp/omnisharp-vim'
-"Plug 'w0rp/ale'
+"" Snippets
+"Plug 'SirVer/ultisnips'
+"Plug 'honza/vim-snippets'
 
-
-if executable('docker-langserver')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'docker-langserver',
-        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'docker-langserver --stdio']},
-        \ 'whitelist': ['dockerfile'],
-        \ })
-endif
-
-"Plug 'mattn/vim-lsp-settings'
-
-"
-"hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhere to h
-"hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhere to h
-"alternativ
 Plug 'neovim/nvim-lsp'
-"Plug 'maralla/completor.vim'
-
-
-
-
+Plug 'scalameta/nvim-metals'
+" Complementary plugins that I recommend and will go over down below
+Plug 'haorenW1025/completion-nvim'
+Plug 'haorenW1025/diagnostic-nvim'
 call plug#end()
 
-"
+
+
+let g:metals_server_version = '0.9.0+236-8d0924af-SNAPSHOT'
+
 "" fzf.vim
-set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__,1TB**
-let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path 'node_modules/**' -o -path '__pycache__/**' -prune -o -path 'MEGA*/**' -prune -o -path '1TB/**' -prune -o -path 'target/**' -prune -o -path 'dist/**' -prune -o  -type f -print -o -type l -print 2> /dev/null"
+""set wildmode=list:longest,list:full
+""set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__,1TB**
+""let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path 'node_modules/**' -o -path '__pycache__/**' -prune -o -path 'MEGA*/**' -prune -o -path '1TB/**' -prune -o -path 'target/**' -prune -o -path 'dist/**' -prune -o  -type f -print -o -type l -print 2> /dev/null"
+""
+lua << EOF
+  local nvim_lsp = require'nvim_lsp'
+  local M = {}
+  M.on_attach = function()
+      require'diagnostic'.on_attach() -- needed for the diagnostic plugin
+      require'completion'.on_attach() -- needed for the completion plugin
+    end
+  nvim_lsp.pyls.setup{
+    on_attach = M.on_attach
+  }
+EOF
+""lua << EOF
+""
+""EOF
 
-
-lua require'nvim_lsp'.pyls.setup{}
-lua require'nvim_lsp'.bashls.setup{}
+""lua require'nvim_lsp'.pyls.setup{}
+""lua require'nvim_lsp'.bashls.setup{}
 autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> <c-d> <cmd>lua vim.lsp.buf.definition()<CR>
@@ -111,20 +97,17 @@ nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
 nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> gR    <cmd>lua vim.lsp.buf.rename()<CR>
+nnoremap <silent> gf    <cmd>lua vim.lsp.buf.formatting()<CR>
+""nnoremap <silent> <c-f> <cmd>luafile ~/.config/nvim/config/luascripts/formatRegion.lua<CR>
+nnoremap <silent> <c-f> <cmd>lua vim.lsp.buf.range_formatting({})<CR>
+let g:diagnostic_enable_virtual_text = 1
+let g:diagnostic_trimmed_virtual_text = '20'
 
 au BufReadPost,BufNewFile *.py set foldmethod=indent
 
 set foldmethod=expr
   \ foldexpr=lsp#ui#vim#folding#foldexpr()
   \ foldtext=lsp#ui#vim#folding#foldtext()
-
-
-" Vim-Session
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
-
-"" Snippets
-"Plug 'SirVer/ultisnips'
-"Plug 'honza/vim-snippets'
 
 
