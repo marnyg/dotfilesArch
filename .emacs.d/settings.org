@@ -231,8 +231,12 @@
  (setq
   org-directory "~/notes/org"
   org-default-notes-file (concat org-directory "/refile.org")
-  org-refile-targets (quote ((nil :maxlevel . 1)
- 			       (org-agenda-files :maxlevel . 1)))
+  org-refile-targets (quote ((nil :maxlevel . 3)
+ 			       ("~/notes/org/projects.org" :maxlevel . 3)
+ 			       ("~/notes/org/tickler.org" :maxlevel . 3)
+ 			       ("~/notes/org/shopping.org" :maxlevel . 3)
+ 			       ("~/notes/org/inbox.org" :maxlevel . 3)
+ 			       ("~/notes/org/somedayMaby.org" :maxlevel . 3)))
 )
 (setq org-agenda-files (list org-directory))
   

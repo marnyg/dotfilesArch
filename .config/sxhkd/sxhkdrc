@@ -3,7 +3,7 @@ super+r
 super+c
     clipmenu 
 super+a
-    st -e nvim -c terminal
+    st -e pulsemixer
 super+e
     st -e nvim
 #super+shift+e

@@ -72,6 +72,7 @@ let g:metals_server_version = '0.9.0+236-8d0924af-SNAPSHOT'
 ""set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__,1TB**
 ""let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path 'node_modules/**' -o -path '__pycache__/**' -prune -o -path 'MEGA*/**' -prune -o -path '1TB/**' -prune -o -path 'target/**' -prune -o -path 'dist/**' -prune -o  -type f -print -o -type l -print 2> /dev/null"
 ""
+""lsp setup
 lua << EOF
   local nvim_lsp = require'nvim_lsp'
   local M = {}
@@ -85,10 +86,18 @@ lua << EOF
 EOF
 ""lua << EOF
 ""
+""
+""
+""
+""
+""
 ""EOF
 
 ""lua require'nvim_lsp'.pyls.setup{}
 ""lua require'nvim_lsp'.bashls.setup{}
+
+
+""lsp bindings
 autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> <c-d> <cmd>lua vim.lsp.buf.definition()<CR>
@@ -101,8 +110,28 @@ nnoremap <silent> gR    <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> gf    <cmd>lua vim.lsp.buf.formatting()<CR>
 ""nnoremap <silent> <c-f> <cmd>luafile ~/.config/nvim/config/luascripts/formatRegion.lua<CR>
 nnoremap <silent> <c-f> <cmd>lua vim.lsp.buf.range_formatting({})<CR>
+
+""completions
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+nnoremap <silent> ]p    :NextDiagnostic<CR>
+nnoremap <silent> [p    :PrevDiagnostic<CR>
+set completeopt=menuone,noinsert,noselect
+set shortmess+=c
+
+""diagnostic
 let g:diagnostic_enable_virtual_text = 1
 let g:diagnostic_trimmed_virtual_text = '20'
+
+
+" Statusline
+function! LspStatus() abort
+  if luaeval('#vim.lsp.buf_get_clients() > 0')
+    return luaeval("require('lsp-status').status()")
+  endif
+
+  return ''
+endfunction
 
 au BufReadPost,BufNewFile *.py set foldmethod=indent
 
