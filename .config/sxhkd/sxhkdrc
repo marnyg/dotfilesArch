@@ -12,6 +12,8 @@ super+shift+e
     emacsclient -c
 super+n
     st -e newsboat
+super+shift+n
+    st -e nmtui
 super+shift+m
     st -e ncmpcpp
 super+p
@@ -24,6 +26,8 @@ super+d
     dmenu_run
 super+w
     qutebrowser
+super+shift+q
+    QT_SCALE_FACTOR_ROUNDING_POLICY=Round qbittorrent
 super+o
     st -e htop
 super+Return
