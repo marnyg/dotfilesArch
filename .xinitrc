@@ -12,7 +12,7 @@ xset r rate 300 100&
 xmodmap -e 'keycode 135 = Super_R'
 
 status.sh &
-sxhkd>~/.sxhkd.log &
+sxhkd &
 redshift &
 compton &
 clipmenud &
