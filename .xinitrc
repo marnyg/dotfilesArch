@@ -6,7 +6,7 @@ xrandr --output DVI-I-0 --off --output DVI-I-1 --mode 1920x1080 --pos 0x0 --rota
 
 
 #feh --bg-scale ~/.local/share/.wall3.jpeg
-xwallpaper --zoom ~/.local/share/.wall3.jpg
+xwallpaper --zoom ~/.local/share/.wall3.jpeg
 
 setxkbmap -layout us,no -variant altgr-intl -option "lv3:ralt_alt,grp:alt_shift_toggle" -option caps:escape 
 xset r rate 300 100&
