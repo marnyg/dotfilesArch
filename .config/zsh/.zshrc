@@ -91,3 +91,5 @@ source ~/.config/icons
 source /home/$USER/.config/fzfcommands
 bindkey '' fh
 
+
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh
