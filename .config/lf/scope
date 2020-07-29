@@ -55,5 +55,4 @@ handle_mime() {
 
 MIMETYPE="$( file --dereference --brief --mime-type -- "${FILE_PATH}" )"
 handle_mime "${MIMETYPE}"
-echo "asdsd"
 exit 1
