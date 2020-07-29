@@ -9,7 +9,7 @@ do
 	then 
 		mkdir $HOME$(echo $f| cut -c 2-)
 	else
-		ln -sf $HOME/git/dotfilesArch$(echo $f| cut -c 2-) $HOME$(echo $f| cut -c 2-)
+		ln -sf $(pwd)$(echo $f| cut -c 2-) $HOME$(echo $f| cut -c 2-)
 	fi
 	#echo ~$(echo $f| cut -c 2-)
 
