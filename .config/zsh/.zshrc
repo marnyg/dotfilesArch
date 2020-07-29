@@ -47,6 +47,46 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 alias vim="nvim"
+alias tmux="tmux -f ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf"
+alias gsh="git stash"
+alias gst="git status --short --branch"
+alias gsu="git submodule update --recursive --merge"
+alias gdf="git diff"
+alias gdt="git difftool"
+alias glo="git log"
+alias gps="git push"
+alias gpl="git pull"
+alias gco="git checkout"
+alias gci="git commit"
+alias gad="git add"
+alias grm="git rm"
+alias gmv="git mv"
+alias gtg="git tag"
+alias gbr="git branch"
+
+# Extracting
+extract () {
+ if [ -f $1 ] ; then
+      case $1 in
+          *.tar.bz2)   tar xvjf $1    ;;
+          *.tar.gz)    tar xvzf $1    ;;
+          *.bz2)       bunzip2 $1     ;;
+          *.rar)       rar x $1       ;;
+          *.gz)        gunzip $1      ;;
+          *.tar)       tar xvf $1     ;;
+          *.tbz2)      tar xvjf $1    ;;
+          *.tgz)       tar xvzf $1    ;;
+          *.zip)       unzip $1       ;;
+          *.Z)         uncompress $1  ;;
+          *.7z)        7z x $1        ;;
+          *)           echo "don't know how to extract '$1'..." ;;
+      esac
+  else
+      echo "'$1' is not a valid file!"
+
+ fi
+}
+
 source ~/.config/icons
 source /home/$USER/.config/fzfcommands
 bindkey '' fh
