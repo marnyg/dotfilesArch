@@ -637,7 +637,7 @@ other parameters."
                                                "[^[:alpha:]]"
                                                "[']"
                                                t
-                                               ("-d" "en_US")
+                                               ("-d" "en_US-large")
                                                nil
                                                iso-8859-1))
  (with-eval-after-load "ispell"

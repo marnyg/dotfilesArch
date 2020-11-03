@@ -73,17 +73,17 @@ let g:metals_server_version = '0.9.0+236-8d0924af-SNAPSHOT'
 ""let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path 'node_modules/**' -o -path '__pycache__/**' -prune -o -path 'MEGA*/**' -prune -o -path '1TB/**' -prune -o -path 'target/**' -prune -o -path 'dist/**' -prune -o  -type f -print -o -type l -print 2> /dev/null"
 ""
 ""lsp setup
-lua << EOF
-  local nvim_lsp = require'nvim_lsp'
-  local M = {}
-  M.on_attach = function()
-      require'diagnostic'.on_attach() -- needed for the diagnostic plugin
-      require'completion'.on_attach() -- needed for the completion plugin
-    end
-  nvim_lsp.pyls.setup{
-    on_attach = M.on_attach
-  }
-EOF
+"lua << EOF
+"  local nvim_lsp = require'nvim_lsp'
+"  local M = {}
+"  M.on_attach = function()
+"      require'diagnostic'.on_attach() -- needed for the diagnostic plugin
+"      require'completion'.on_attach() -- needed for the completion plugin
+"    end
+"  nvim_lsp.pyls.setup{
+"    on_attach = M.on_attach
+"  }
+"EOF
 ""lua << EOF
 ""
 ""
