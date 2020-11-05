@@ -9,8 +9,8 @@ settings:
   bindings.commands:
     global:
       normal:
-        M: hint links spawn mpv --pause {hint-url}
-        m: spawn mpv {url}
+        ',m': spawn mpv {url}
+        ',M': hint links spawn mpv --pause {hint-url}
         zl: spawn --userscript qute-pass -d dmenu
         zpl: spawn --userscript qute-pass -d dmenu --password-only
         zul: spawn --userscript qute-pass -d dmenu --username-only
@@ -33,8 +33,6 @@ settings:
   tabs.position:
     global: left
   tabs.show:
-    global: switching
+    global: always
   tabs.show_switching_delay:
     global: 10000
-  tabs.tree_tabs:
-    global: true
