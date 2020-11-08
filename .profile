@@ -35,6 +35,8 @@ export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
 export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
 export ANSIBLE_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/ansible/ansible.cfg"
 export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/history"
+export VAGRANT_HOME="$XDG_DATA_HOME"/vagrant
+export VAGRANT_ALIAS_FILE="$XDG_DATA_HOME"/vagrant/aliases
 
 #export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
 #export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
