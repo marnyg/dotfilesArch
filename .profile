@@ -1,7 +1,6 @@
 #! /bin/bash
 
-export PATH=$PATH:$HOME/bin
-export PATH="$PATH:/home/mar/.local/bin"
+export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"
 
 # default programs
 export BROWSER=qutebrowser
@@ -9,8 +8,7 @@ export EDITOR=nvim
 export TERMINAL=st
 export SHELL=zsh
 
-# default jetbrains setting
-export _JAVA_AWT_WM_NONREPARENTING=1
+export _JAVA_AWT_WM_NONREPARENTING=1 # Fix for Java applications in dwm
 
 #config files
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -31,14 +29,15 @@ export WINEPREFIX="$XDG_DATA_HOME/wineprefix/default"
 export WINEPREFIX="$XDG_DATA_HOME/kodi"
 export TASKRC="$XDG_CONFIG_HOME"/task/taskrc
 export TASKDATA="$XDG_DATA_HOME"/task
+export KODI_DATA="${XDG_DATA_HOME:-$HOME/.local/share}/kodi"
+export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
+export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
+export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
+export ANSIBLE_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/ansible/ansible.cfg"
+export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/history"
 
 #export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
 #export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
-# google stuff
-export IMAGE_FAMILY="pytorch-latest-gpu" # or "pytorch-latest-cpu" for non-GPU instances
-export ZONE="us-west1-b" # budget: "us-west1-b"
-export INSTANCE_NAME="my-fastai-instance"
-export INSTANCE_TYPE="n1-highmem-8"
 
 #GPG
 gpg-connect-agent /bye
