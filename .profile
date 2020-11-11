@@ -38,6 +38,7 @@ export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/history"
 export VAGRANT_HOME="$XDG_DATA_HOME"/vagrant
 export VAGRANT_ALIAS_FILE="$XDG_DATA_HOME"/vagrant/aliases
 
+
 #export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
 #export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
 
