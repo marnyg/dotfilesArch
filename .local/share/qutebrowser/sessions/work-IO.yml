@@ -1,0 +1,102 @@
+windows:
+- active: true
+  geometry: !!binary |
+    AdnQywADAAAAAAQ4AAAAFQAACFcAAAQ3AAAEOQAAABYAAAhWAAAENgAAAAAAAAAAB4AAAAQ5AAAA
+    FgAACFYAAAQ2
+  tabs:
+  - history:
+    - original-url: https://teams.microsoft.com/go#
+      pinned: false
+      title: General (meFIT team) | Microsoft Teams
+      url: https://teams.microsoft.com/_
+    - original-url: https://teams.microsoft.com/_
+      pinned: false
+      title: General (meFIT team) | Microsoft Teams
+      url: https://teams.microsoft.com/_#/conversations/General?threadId=19:2e528bf3e79d4f9bb4b49065c5e2bc55@thread.tacv2&ctx=channel
+    - original-url: https://teams.microsoft.com/_#/conversations/General?threadId=19:2e528bf3e79d4f9bb4b49065c5e2bc55@thread.tacv2&ctx=channel
+      pinned: false
+      title: General (meFIT team) | Microsoft Teams
+      url: https://teams.microsoft.com/_#
+    - original-url: https://teams.microsoft.com/_#
+      pinned: false
+      title: General (meFIT team) | Microsoft Teams
+      url: https://teams.microsoft.com/_#/conversations/General?threadId=19:2e528bf3e79d4f9bb4b49065c5e2bc55@thread.tacv2&ctx=channel
+    - original-url: https://teams.microsoft.com/_#
+      pinned: false
+      title: General (meFIT team) | Microsoft Teams
+      url: https://teams.microsoft.com/_#/conversations/General?threadId=19:2e528bf3e79d4f9bb4b49065c5e2bc55@thread.tacv2&ctx=channel
+    - original-url: https://teams.microsoft.com/_#
+      pinned: false
+      title: General (meFIT team) | Microsoft Teams
+      url: https://teams.microsoft.com/_#/conversations/General?threadId=19:2e528bf3e79d4f9bb4b49065c5e2bc55@thread.tacv2&ctx=channel
+    - original-url: https://teams.microsoft.com/_#
+      pinned: false
+      title: General (meFIT team) | Microsoft Teams
+      url: https://teams.microsoft.com/_#/conversations/General?threadId=19:2e528bf3e79d4f9bb4b49065c5e2bc55@thread.tacv2&ctx=channel
+    - active: true
+      original-url: https://teams.microsoft.com/_#
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 0
+      title: General (meFIT team) | Microsoft Teams
+      url: https://teams.microsoft.com/_#/conversations/General?threadId=19:2e528bf3e79d4f9bb4b49065c5e2bc55@thread.tacv2&ctx=channel
+      zoom: 1.0
+  - history:
+    - pinned: false
+      title: E-post – Marius Nygård – Outlook
+      url: https://outlook.office365.com/mail/inbox/id/AAQkADBkNWFhNWNkLWVkNDMtNGQ2MS1hNjI2LTljYTcxNWRmYzZkMAAQAIpY%2BxseLE0BjNmCZEftOIE%3D
+    - pinned: false
+      title: E-post – Marius Nygård – Outlook
+      url: https://outlook.office365.com/mail/inbox
+    - active: true
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 0
+      title: E-post – Marius Nygård – Outlook
+      url: https://outlook.office365.com/mail/inbox/id/AAQkADBkNWFhNWNkLWVkNDMtNGQ2MS1hNjI2LTljYTcxNWRmYzZkMAAQAIpY%2BxseLE0BjNmCZEftOIE%3D
+      zoom: 1.0
+  - history:
+    - active: true
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Slack | Marius Nygård | Oslo Experis Autumn 2020
+      url: https://app.slack.com/client/T0192TNFV2L/D018BUP8Q5B
+      zoom: 1.0
+  - active: true
+    history:
+    - pinned: false
+      title: discord web at DuckDuckGo
+      url: https://duckduckgo.com/?q=discord+web&ia=web&iai=r1-0&page=1&sexp=%7B%22prodexp%22%3A%22b%22%2C%22prdsdexp%22%3A%22c%22%2C%22biaexp%22%3A%22b%22%2C%22msvrtexp%22%3A%22b%22%7D
+    - original-url: https://discord.com/channels/@me
+      pinned: false
+      title: Discord | Your Place to Talk and Hang Out
+      url: https://discord.com/
+    - original-url: https://discord.com/channels/@me
+      pinned: false
+      title: Discord
+      url: https://discord.com/login?redirect_to=%2Fchannels%2F%40me
+    - original-url: https://discord.com/login?redirect_to=%2Fchannels%2F%40me
+      pinned: false
+      title: Discord
+      url: https://discord.com/login
+    - original-url: https://discord.com/app
+      pinned: false
+      title: Discord
+      url: https://discord.com/channels/@me
+    - original-url: https://discord.com/channels/@me
+      pinned: false
+      title: '#welcome'
+      url: https://discord.com/channels/721350668534677624/722067345429889065
+    - active: true
+      original-url: https://discord.com/channels/721350668534677624/722067345429889065
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 0
+      title: '#general'
+      url: https://discord.com/channels/771390056476704855/771390057944055819
+      zoom: 1.0

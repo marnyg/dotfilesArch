@@ -1,0 +1,155 @@
+windows:
+- active: true
+  geometry: !!binary |
+    AdnQywADAAAAAAQ4AAAAFQAAC7cAAAQ3AAAEOAAAABUAAAu3AAAENwAAAAAAAAAAB4AAAAQ4AAAA
+    FQAAC7cAAAQ3
+  tabs:
+  - history:
+    - active: true
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 0
+      title: 'nlohmann/json: JSON for Modern C++'
+      url: https://github.com/nlohmann/json
+      zoom: 1.0
+  - history:
+    - active: true
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 13512
+      title: Compose file version 3 reference | Docker Documentation
+      url: https://docs.docker.com/compose/compose-file/#replicas
+      zoom: 1.0
+  - history:
+    - pinned: false
+      title: Checking your Browser - GitLab
+      url: https://gitlab.com/users/sign_in?__cf_chl_jschl_tk__=12e95c8a5d74af62fbeab7149504a55f23a9c3dc-1605172797-0-AT7t7FSpW58EJAoZO3UjUnpQomrZQ1I9NKVHGGR_elxeb2emw3FbEhirsAcUT8hxaDCk0pnPojLkUCBiSpwoC-NdAtXNJ-622vElVFcZ10X-rnOXKOfdNzXShwtGc1iKDKzq4FnIUBNL-NBH6rfW0Z9MDnRXDWI2JnoJeHK3EKam3TP5dOBf5J5w6ZZvjE3myXR8rnU0Ri3o7bB0p9bp2c-Ma7s7YDoVQoB88_5dCSsCA23gGJmgjFW26o1aiP4eQQICrTrPdidzlpA0wi3uzF805LugHXJIXGWU9WNTXNEsWRpulYkcclay91rMqk2WgzJ_Hk-l84ItGNy2kiG8WZT4rSjGhArHXqNeYYreLmP0
+    - original-url: https://gitlab.com/users/sign_in?__cf_chl_jschl_tk__=3046fa0360dc486060dcb4daa6bc8e3a36640223-1605254454-0-AdlM5zvUUuryXUKXywVSr213ZFqozGVIXS0y367CQDN1doVsQMnznss0NSQvUuqOlkoD_ARrYl3kXclCVYZ_0zf5LlPfq0tSte7cIsS06e2mF6xOSzY1dhwV94Y__j9ksFHRAFeWjHAOpOPKqccRm-jqLe3LZx7_m8OHCUmmol8nBF5Wk7RSrKoz6f9OGavyyYsFrrOh4uPK2ytidmuDS2Os1iYEve39iy7z8uFlN-39pnnp3JU6p1HsjevECw0buwN8V7vPRYZWGgIsnV6c2KaqrIhE9W6ESfLZ6J5BeaZbgkN8hxY9KDlXqjXtRVxc5JuGvzn9MAnJokdWdwVuLaGkrRfC4q318bTgFb0XuBcT
+      pinned: false
+      title: Checking your Browser - GitLab
+      url: https://gitlab.com/users/sign_in
+    - active: true
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Sign in · GitLab
+      url: https://gitlab.com/users/sign_in?__cf_chl_jschl_tk__=f75a3a2e0a763b59c42171f5a225c68f7ef04719-1605254526-0-AfGw-d6duSmCQq_aEP1aivBUnA4gBNDfRJjwaL1FIgXXrslaxIRilf7SyIEn43PGH9lezUYJBtq6a609kwgBmaUgd2l1dooQutcdsq_TXww4YCyB4958qECWg8oD_fEEgux_Qiyg_teKJwjrY8Prp3cxOoq8KX-Y7KPXDkEOV2hY_TKMXJ8nSi-z1J1AHBV7KfyCafuJL7XbCWw636FCgtDhUnM4HLuDvz9hegdggFWAxF8naFXxiEbFM5TrZnThYgQ49-sZDMYiU8b9xX3E_4T8u0auwdvcQ3HiIIDrOa02qqCjpK8nOG0FHGQfh3V92ygahZgOBddL0JR5zXhQrBK7Wr-9a8OcVB1H6Jld4bHU
+      zoom: 1.0
+  - history:
+    - pinned: false
+      title: Checking your Browser - GitLab
+      url: https://gitlab.com/users/sign_in?__cf_chl_jschl_tk__=c06071add107dd4852154068d19be417007f5a13-1605172797-0-AbSVxfvKQ11oTVZfAFqSe0QshUg8SpoXUe1nq428KQKo_UCfz7pY3yNH6TNNR39P9AHqbX1UqTQMBOq8SWN1BZ4qLb1B5ob31wtx1aicbPSc-Vpv5__wb1eLv6CxKBHWFJUrLAlk-TOETAg_EfINtGlxaYoDygBOC6G5LSPH9v4Oe_Sv-xnk8wz2V4EH6B3jNu8IHsuLgYSJzl9HxVFQL5l0ZjzeEmcvgvZcuH_U82fUUrizaod2u69q16Gr0uIXVUgle1KElQELUw-NC0zX-mdQs9Mq9K7qCdvMHLixFlbzgGqUfkMvmbsRNCZLskIia0KOLwS0JK-uLrhCtYG3C36fuOKOqofCBwN_Jw3-_Td5
+    - original-url: https://gitlab.com/users/sign_in?__cf_chl_jschl_tk__=d398e14c9ff3a1e6fe6713e5012d131746f4af54-1605254454-0-AW4AfbHADf4T14JNz8PXbzoinCfYjGIXUTPMu30eWvXsSZQPWWyCpsrje-i0Mse3AwKYxIfoax-1ePv4l2Ps_OqnA4O1s8NqRwWZw2xFbDOQVNRurUS3wf2acKYJwRZpm7ctuqnXXi4Jew6aaW1on1PaXQuRz79pnFrjW8l0LOjZUcsk3zD7FTK4l-AlxDMZYhyz1WDQA_JPTRZB39R07rKYHuY6EkrKQSgCJcYlyaO0EZb4izFVvpSn1lHYSuAjs9uPD-VQ7Psmh_N9SWVNNOQgXdSVpR9YeQ-jvwsQAr9GlII0s4wszKn_8tdK6ZabtkH-CrXJUipaNohG6IZHAVOncyJEjt7w536Y3Icsyhfj
+      pinned: false
+      title: Checking your Browser - GitLab
+      url: https://gitlab.com/users/sign_in
+    - active: true
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Sign in · GitLab
+      url: https://gitlab.com/users/sign_in?__cf_chl_jschl_tk__=c1b39fe4dc82ea82447a0faaaad0b18ea958d7be-1605254525-0-ATPXnSxNU7epofmY0VZSt6lDDJfBkteqeYO5BWwjkZDFI-UbFoafJocIIA-W4zIE9JMiPKdz5qSEtLZcA2-68kub31jw7s2QhyckY2PSZxRi0ZXavWiE5l2ymPZCui1k7XAsNcC0vvZct7typu6-jXFIy1XvqHJsVEf84_A1tDR_2p_CMYvMblOg6SxUU9fse7ft6oZPgllDrTL613qqp3sp3YJadrq2121bp_BO8XK-OdaA3QW2Y7oPBueWexZEloFuqEBO05CGqXQYcmRhIlp25BPxTZAsWNBttz3NK742OKzyMMyE7LKNF-Og5F2AsHlaon0yYev7gIoRoXasWjr6ckaC6He3cbwK_i28JBnX
+      zoom: 1.0
+  - history:
+    - active: true
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 0
+      title: dotnet api with keycloak at DuckDuckGo
+      url: https://duckduckgo.com/?q=dotnet+api+with+keycloak&ia=web&iai=r1-0&page=1&sexp=%7B%22prodexp%22%3A%22b%22%2C%22prdsdexp%22%3A%22c%22%2C%22biaexp%22%3A%22b%22%2C%22videxp%22%3A%22b%22%7D
+      zoom: 1.0
+  - history:
+    - active: true
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Adding authorization to Asp.Net Core app using Keycloak | by Xavier Hahn
+        | Medium
+      url: https://medium.com/@xavier.hahn/adding-authorization-to-asp-net-core-app-using-keycloak-c6c96ee0e655
+      zoom: 1.0
+  - history:
+    - active: true
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 0
+      title: ASP.Net Core & Angular OpenID Connect using Keycloak | by Xavier Hahn
+        | Medium
+      url: https://medium.com/@xavier.hahn/asp-net-core-angular-openid-connect-using-keycloak-6437948c008
+      zoom: 1.0
+  - history:
+    - active: true
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 0
+      title: 'org-sync: synchronize your github/gitlab issues with org-mode : orgmode'
+      url: https://www.reddit.com/r/orgmode/comments/egs9nt/orgsync_synchronize_your_githubgitlab_issues_with/
+      zoom: 1.0
+  - history:
+    - active: true
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 0
+      title: 'magit/forge: Work with Git forges from the comfort of Magit'
+      url: https://github.com/magit/forge
+      zoom: 1.0
+  - history:
+    - active: true
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Org-sync
+      url: https://orgmode.org/worg/org-contrib/gsoc2012/student-projects/org-sync/
+      zoom: 1.0
+  - history:
+    - active: true
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 0
+      title: ssh_config(5) - OpenBSD manual pages
+      url: https://man.openbsd.org/ssh_config.5
+      zoom: 1.0
+  - history:
+    - active: true
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Ephemeral Database Credentials With HashiCorp Vault & Terraform at Bench
+        Accounting
+      url: https://www.hashicorp.com/resources/ephemeral-database-credentials-with-vault-and-terraform-at-bench-accounting
+      zoom: 1.0
+  - history:
+    - active: true
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 0
+      title: 'BenchLabs/talk-vault-ephemeral-credentials: "Ephemeral credentials with
+        Vault and Terraform" demo for the Hashicorp User Group talk'
+      url: https://github.com/BenchLabs/talk-vault-ephemeral-credentials
+      zoom: 1.0
+  - active: true
+    history:
+    - pinned: false
+      title: restart emacas deamon at DuckDuckGo
+      url: https://duckduckgo.com/?q=restart+emacas+deamon&ia=web&iai=r1-0&page=1&sexp=%7B%22prodexp%22%3A%22b%22%2C%22prdsdexp%22%3A%22c%22%2C%22biaexp%22%3A%22b%22%2C%22msvrtexp%22%3A%22b%22%7D
+    - active: true
+      original-url: https://duckduckgo.com/?q=restart+emacas+deamon&ia=web&iai=r1-0&page=1&sexp=%7B%22prodexp%22%3A%22b%22%2C%22prdsdexp%22%3A%22c%22%2C%22biaexp%22%3A%22b%22%2C%22msvrtexp%22%3A%22b%22%7D
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 480
+      title: Restart emacs daemon from within emacs - Emacs Stack Exchange
+      url: https://emacs.stackexchange.com/questions/16646/restart-emacs-daemon-from-within-emacs
+      zoom: 1.0
