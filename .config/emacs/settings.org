@@ -233,17 +233,16 @@
         "\\<IGNORE\\>"))
 
  (setq
-  org-directory "~/notes/org"
+  org-directory "~/notes/org/"
   org-default-notes-file (concat org-directory "/refile.org")
-  org-refile-targets (quote ((nil :maxlevel . 3)
- 			       ("~/notes/org/projects.org" :maxlevel . 3)
- 			       ("~/notes/org/tickler.org" :maxlevel . 3)
- 			       ("~/notes/org/shopping.org" :maxlevel . 3)
- 			       ("~/notes/org/inbox.org" :maxlevel . 3)
- 			       ("~/notes/org/somedayMaby.org" :maxlevel . 3)))
-)
+  org-refile-targets (quote (
+ 			       ("~/notes/org/projects.org" :maxlevel . 2)
+ 			       ("~/notes/org/inbox.org" :maxlevel . 1)
+ 			       ("~/notes/org/tickler.org" :maxlevel . 1)
+ 			       ("~/notes/org/somedayMaby.org" :maxlevel . 1)
+ 			       ("~/notes/org/shopping.org" :maxlevel . 1)
+)))
 (setq org-agenda-files (list org-directory))
-  
  (define-key global-map (kbd "C-c t")
    (lambda () (interactive) (org-capture nil "t")))
        
@@ -582,6 +581,7 @@ other parameters."
   (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
   (setq evil-want-keybinding nil)
   :config
+  (setq evil-undo-system "undo-tree") 
   (evil-mode 1))
 
 (use-package evil-escape
@@ -605,6 +605,7 @@ other parameters."
   (global-set-key [remap query-replace] 'anzu-query-replace))
 
 #+END_SRC
+
 ** evil-org
  #+BEGIN_SRC emacs-lisp
  (use-package evil-org
@@ -624,6 +625,14 @@ other parameters."
  (add-hook 'auto-save-hook 'org-save-all-org-buffers)
 
  #+END_SRC
+** undo-tree
+ #+BEGIN_SRC emacs-lisp
+ (use-package undo-tree
+   :ensure t)
+ (global-undo-tree-mode)
+ 
+ #+END_SRC
+   
 ** spelling
  #+BEGIN_SRC emacs-lisp
  ;; spelling
