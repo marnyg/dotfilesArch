@@ -1,9 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/$USER/.config/oh-my-zsh"
 
-#ZSH_THEME="robbyrussell"
-ZSH_THEME="avit"
-
 # Uncomment the following line to automatically update without prompting.
 DISABLE_UPDATE_PROMPT="true"
 
@@ -35,3 +32,4 @@ bindkey '' fh
 
 # Load syntax highlighting; should be last.
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+eval "$(starship init zsh)"
