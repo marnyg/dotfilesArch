@@ -15,7 +15,7 @@ COMPLETION_WAITING_DOTS="true"
 # much, much faster.
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-plugins=(sudo extract vi-mode zsh-interactive-cd git docker-compose docker)
+plugins=(sudo extract vi-mode zsh-interactive-cd git docker-compose docker kubectl)
 
 source $ZSH/oh-my-zsh.sh
 

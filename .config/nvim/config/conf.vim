@@ -102,8 +102,8 @@ inoremap <C-L> <C-G>u<Esc>[s1z=`]a<C-G>u
 nnoremap zz [s1z=
 set breakindent
 set linebreak
-autocmd BufEnter *.md :set spell spelllang=nb
-autocmd BufEnter eksamenV2016.md :setlocal spellfile+=oneoff.utf-8.add
+"autocmd BufEnter *.md :set spell spelllang=nb
+"autocmd BufEnter eksamenV2016.md :setlocal spellfile+=oneoff.utf-8.add
 
 
 let g:task_rc_override = 'rc.defaultwidth=0'
