@@ -9,8 +9,8 @@ settings:
   bindings.commands:
     global:
       normal:
-        ',m': spawn mpv {url}
         ',M': hint links spawn mpv --pause {hint-url}
+        ',m': spawn mpv {url}
         zl: spawn --userscript qute-pass -d dmenu
         zpl: spawn --userscript qute-pass -d dmenu --password-only
         zul: spawn --userscript qute-pass -d dmenu --username-only
@@ -25,6 +25,8 @@ settings:
     - '{file}'
     - -c
     - normal {line}G{column0}l
+  fonts.default_size:
+    global: 14px
   qt.args:
     global:
     - ppapi-widevine-path=/usr/lib64/qt5/plugins/ppapi/libwidevinecdmadapter.so
@@ -36,3 +38,5 @@ settings:
     global: always
   tabs.show_switching_delay:
     global: 10000
+  tabs.width:
+    global: 10%
