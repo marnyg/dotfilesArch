@@ -47,4 +47,6 @@ super+bracketright
 Print
     F=/tmp/`date +%s`.png && echo $F &&  import $F && xclip -selection clipboard -target image/png -i $F && rm $F
     #sleep 0.3 && scrot -s '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f && rm $f'
+super+F12
+    gpg-connect-agent updatestartuptty /bye > /dev/null
 
