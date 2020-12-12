@@ -43,23 +43,26 @@ export VAGRANT_ALIAS_FILE="$XDG_DATA_HOME"/vagrant/aliases
 #export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
 
 #GPG
-if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-  SESSION_TYPE=remote/ssh
+#if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+#  SESSION_TYPE=remote/ssh
 # many other tests omitted
-else
-  case $(ps -o comm= -p $PPID) in
-    sshd|*/sshd) SESSION_TYPE=remote/ssh;;
-  esac
-fi
+#else
+#  case $(ps -o comm= -p $PPID) in
+#    sshd|*/sshd) SESSION_TYPE=remote/ssh;;
+#  esac
+#fi
 
-if [ $SESSION_TYPE != "remote/ssh" ]; then
-    gpg-connect-agent /bye
-    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-fi
+#if [ $SESSION_TYPE != "remote/ssh" ]; then
+#  gpg-connect-agent /bye
+#  export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+#fi
 
 source /home/mar/.config/icons
 source /home/mar/.config/fzfcommands
 
 if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -le 3 ]] && [ -z "$SSH_CLIENT" ]; then
+  #GPG if not ssh
+  gpg-connect-agent /bye
+  export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
   exec startx
 fi
