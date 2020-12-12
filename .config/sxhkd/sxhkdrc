@@ -35,15 +35,15 @@ super+Return
 super+slash
     st -e zsh
 super+apostrophe
-    changeVolume 5%+
+    changeVolume up
 super+semicolon
-    changeVolume 5%-
+    changeVolume down
 super+Escape
-    mpc toggle
+    playerctl  play-pause
 super+bracketleft
-    mpc prev
+    playerctl previous
 super+bracketright
-    mpc next
+    playerctl next
 Print
     F=/tmp/`date +%s`.png && echo $F &&  import $F && xclip -selection clipboard -target image/png -i $F && rm $F
     #sleep 0.3 && scrot -s '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f && rm $f'
