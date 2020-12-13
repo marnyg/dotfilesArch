@@ -1,0 +1,3 @@
+#! /bin/bash
+KEY=6ce3af05
+ffmpeg -activation_bytes $KEY -i ../../Downloads/BreathTheNewScienceofaLostArt_ep7.aax -c copy output.m4b
