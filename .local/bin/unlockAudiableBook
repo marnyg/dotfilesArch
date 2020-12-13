@@ -1,3 +1,11 @@
 #! /bin/bash
+FILES="$@"
 KEY=6ce3af05
-ffmpeg -activation_bytes $KEY -i ../../Downloads/BreathTheNewScienceofaLostArt_ep7.aax -c copy output.m4b
+#for FILE in ${array[@]}; do
+for FILE; do
+    OUT_NAME=$(echo $FILE|sed "s/.AAX/.m4b/")
+    echo $FILE
+    ffmpeg -activation_bytes $KEY -i "$FILE" -c copy "./out/$OUT_NAME"
+    echo $OUT_NAME
+done
+#ffmpeg -activation_bytes $KEY -i $FILE -c copy ./out/$OUT_FILE
