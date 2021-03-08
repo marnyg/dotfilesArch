@@ -1,9 +1,11 @@
 #! /bin/bash
 
-~/.screenlayout/this.sh
+#~/.screenlayout/this.sh
 
 #feh --bg-scale ~/.local/share/.wall3.jpeg
+nvidia-settings --load-config-only
 xwallpaper --zoom ~/.local/share/.wall3.jpeg
+
 
 setxkbmap -layout us,no -variant altgr-intl -option "lv3:ralt_alt,grp:alt_shift_toggle" -option caps:escape 
 xset r rate 300 100&

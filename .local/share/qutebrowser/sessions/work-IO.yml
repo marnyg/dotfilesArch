@@ -1,102 +1,405 @@
 windows:
 - active: true
   geometry: !!binary |
-    AdnQywADAAAAAAQ4AAAAFQAACFcAAAQ3AAAEOQAAABYAAAhWAAAENgAAAAAAAAAAB4AAAAQ5AAAA
-    FgAACFYAAAQ2
+    AdnQywADAAAAAAQ4AAAAEgAAC7cAAAQ3AAAEOAAAABIAAAu3AAAENwAAAAAAAAAAB4AAAAQ4AAAA
+    EgAAC7cAAAQ3
   tabs:
   - history:
-    - original-url: https://teams.microsoft.com/go#
+    - last_visited: '2020-12-18T11:46:20'
       pinned: false
-      title: General (meFIT team) | Microsoft Teams
-      url: https://teams.microsoft.com/_
-    - original-url: https://teams.microsoft.com/_
-      pinned: false
-      title: General (meFIT team) | Microsoft Teams
-      url: https://teams.microsoft.com/_#/conversations/General?threadId=19:2e528bf3e79d4f9bb4b49065c5e2bc55@thread.tacv2&ctx=channel
-    - original-url: https://teams.microsoft.com/_#/conversations/General?threadId=19:2e528bf3e79d4f9bb4b49065c5e2bc55@thread.tacv2&ctx=channel
-      pinned: false
-      title: General (meFIT team) | Microsoft Teams
-      url: https://teams.microsoft.com/_#
-    - original-url: https://teams.microsoft.com/_#
-      pinned: false
-      title: General (meFIT team) | Microsoft Teams
-      url: https://teams.microsoft.com/_#/conversations/General?threadId=19:2e528bf3e79d4f9bb4b49065c5e2bc55@thread.tacv2&ctx=channel
-    - original-url: https://teams.microsoft.com/_#
-      pinned: false
-      title: General (meFIT team) | Microsoft Teams
-      url: https://teams.microsoft.com/_#/conversations/General?threadId=19:2e528bf3e79d4f9bb4b49065c5e2bc55@thread.tacv2&ctx=channel
-    - original-url: https://teams.microsoft.com/_#
-      pinned: false
-      title: General (meFIT team) | Microsoft Teams
-      url: https://teams.microsoft.com/_#/conversations/General?threadId=19:2e528bf3e79d4f9bb4b49065c5e2bc55@thread.tacv2&ctx=channel
-    - original-url: https://teams.microsoft.com/_#
-      pinned: false
-      title: General (meFIT team) | Microsoft Teams
-      url: https://teams.microsoft.com/_#/conversations/General?threadId=19:2e528bf3e79d4f9bb4b49065c5e2bc55@thread.tacv2&ctx=channel
+      title: DuckDuckGo — Privacy, simplified.
+      url: https://start.duckduckgo.com/
     - active: true
-      original-url: https://teams.microsoft.com/_#
+      last_visited: '2020-12-18T11:46:29'
       pinned: false
       scroll-pos:
         x: 0
         y: 0
-      title: General (meFIT team) | Microsoft Teams
-      url: https://teams.microsoft.com/_#/conversations/General?threadId=19:2e528bf3e79d4f9bb4b49065c5e2bc55@thread.tacv2&ctx=channel
+      title: Anteo Administrasjon
+      url: https://admin.anteo.no/index.php
       zoom: 1.0
   - history:
-    - pinned: false
-      title: E-post – Marius Nygård – Outlook
-      url: https://outlook.office365.com/mail/inbox/id/AAQkADBkNWFhNWNkLWVkNDMtNGQ2MS1hNjI2LTljYTcxNWRmYzZkMAAQAIpY%2BxseLE0BjNmCZEftOIE%3D
-    - pinned: false
+    - last_visited: '2020-12-18T11:46:31'
+      pinned: false
+      title: DuckDuckGo — Privacy, simplified.
+      url: https://start.duckduckgo.com/
+    - active: true
+      last_visited: '2020-12-18T11:46:37'
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Project Fauxton
+      url: https://couchdb.anteo.no/_utils/#login
+      zoom: 1.0
+  - history:
+    - last_visited: '2020-12-18T11:47:01'
+      pinned: false
+      title: Mesh Community | Slack
+      url: https://app.slack.com/client/T016KPBBMPT/D01FT8RC9MK
+    - last_visited: '2020-12-18T12:46:38'
+      pinned: false
+      title: Mesh Community | Slack
+      url: https://app.slack.com/client/T016KPBBMPT/C0167B3DARZ
+    - last_visited: '2020-12-18T12:47:10'
+      pinned: false
+      title: Mesh Community | Slack
+      url: https://app.slack.com/client/T016KPBBMPT/C0165TTCYSZ
+    - last_visited: '2020-12-18T12:47:17'
+      pinned: false
+      title: Mesh Community | Slack
+      url: https://app.slack.com/client/T016KPBBMPT/C0165UD9FNZ
+    - last_visited: '2020-12-18T12:47:25'
+      pinned: false
+      title: Mesh Community | Slack
+      url: https://app.slack.com/client/T016KPBBMPT/C016DFZ40JY
+    - last_visited: '2020-12-18T12:47:33'
+      pinned: false
+      title: Mesh Community | Slack
+      url: https://app.slack.com/client/T016KPBBMPT/C016DFZ40JY/thread/C016DFZ40JY-1608036648.091100
+    - last_visited: '2020-12-18T12:47:41'
+      pinned: false
+      title: Mesh Community | Slack
+      url: https://app.slack.com/client/T016KPBBMPT/C016DFZ40JY
+    - last_visited: '2020-12-18T12:47:48'
+      pinned: false
+      title: Mesh Community | Slack
+      url: https://app.slack.com/client/T016KPBBMPT/C0165V5RUTF
+    - last_visited: '2020-12-18T15:53:29'
+      pinned: false
+      title: Mesh Community | Slack
+      url: https://app.slack.com/client/T016KPBBMPT/C0167B3DARZ
+    - last_visited: '2020-12-18T15:53:37'
+      pinned: false
+      title: Mesh Community | Slack
+      url: https://app.slack.com/client/T016KPBBMPT/C016DFAPR52
+    - active: true
+      last_visited: '2020-12-18T15:53:45'
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Mesh Community | Slack
+      url: https://app.slack.com/client/T016KPBBMPT/C0165UD9FNZ
+      zoom: 1.0
+  - history:
+    - last_visited: '2020-12-18T11:47:11'
+      original-url: https://app.slack.com/client/T3R82K5K6/D01GHSJG0UV
+      pinned: false
+      title: Sign in | Slack
+      url: https://app.slack.com/workspace-signin?redir=%2Fgantry%2Fauth%3Fapp%3Dclient%26lc%3D1607508833%26return_to%3D%252Fclient%252FT3R82K5K6%252FD01GHSJG0UV%26teams%3DT0192TNFV2L%252CT016KPBBMPT
+    - last_visited: '2020-12-18T11:47:35'
+      original-url: https://app.slack.com/workspace-signin?redir=%2Fgantry%2Fauth%3Fapp%3Dclient%26lc%3D1607508833%26return_to%3D%252Fclient%252FT3R82K5K6%252FD01GHSJG0UV%26teams%3DT0192TNFV2L%252CT016KPBBMPT
+      pinned: false
+      title: Slack
+      url: https://anteo-team.slack.com/?redir=%2Fgantry%2Fauth%3Fapp%3Dclient%26lc%3D1607508833%26return_to%3D%252Fclient%252FT3R82K5K6%252FD01GHSJG0UV%26teams%3DT0192TNFV2L%252CT016KPBBMPT
+    - last_visited: '2020-12-18T11:47:41'
+      original-url: https://accounts.google.com/o/oauth2/v2/auth?client_id=606092904014-s1u3idjanlbhr4ns5b1hcjgfn63cr9nh.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Foauth2.slack.com%2Fworkspace-signin%2Foauth%2Fgoogle%2Fend&scope=openid+email+profile&response_type=code&state=%7B%22provider%22%3A%22google%22%2C%22origin%22%3A%22workspace-signin%22%2C%22timestamp%22%3A1608288723%2C%22visitor%22%3A%22.bt2qhu438xgimhudshjpo1mwh%22%2C%22team%22%3A%22T3R82K5K6%22%2C%22extra%22%3A%7B%22redir%22%3A%22%5C%2Fgantry%5C%2Fauth%3Fapp%3Dclient%26lc%3D1607508833%26return_to%3D%252Fclient%252FT3R82K5K6%252FD01GHSJG0UV%26teams%3DT0192TNFV2L%252CT016KPBBMPT%22%7D%7D%7C3c48e220e55ff6c83c163fc7e8d4e4f7a0fc9af5939114f30166b79538da26ff&prompt=consent
+      pinned: false
+      title: Logg på – Google-kontoer
+      url: https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?client_id=606092904014-s1u3idjanlbhr4ns5b1hcjgfn63cr9nh.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Foauth2.slack.com%2Fworkspace-signin%2Foauth%2Fgoogle%2Fend&scope=openid%20email%20profile&response_type=code&state=%7B%22provider%22%3A%22google%22%2C%22origin%22%3A%22workspace-signin%22%2C%22timestamp%22%3A1608288723%2C%22visitor%22%3A%22.bt2qhu438xgimhudshjpo1mwh%22%2C%22team%22%3A%22T3R82K5K6%22%2C%22extra%22%3A%7B%22redir%22%3A%22%5C%2Fgantry%5C%2Fauth%3Fapp%3Dclient%26lc%3D1607508833%26return_to%3D%252Fclient%252FT3R82K5K6%252FD01GHSJG0UV%26teams%3DT0192TNFV2L%252CT016KPBBMPT%22%7D%7D%7C3c48e220e55ff6c83c163fc7e8d4e4f7a0fc9af5939114f30166b79538da26ff&prompt=consent&flowName=GeneralOAuthFlow
+    - active: true
+      last_visited: '2020-12-18T11:47:44'
+      original-url: https://app.slack.com/auth?app=client&lc=1607508833&return_to=%2Fclient%2FT3R82K5K6%2FD01GHSJG0UV&teams=T0192TNFV2L%2CT016KPBBMPT
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Slack | Marius Nygård | Anteo
+      url: https://app.slack.com/client/T3R82K5K6/D01GHSJG0UV
+      zoom: 1.0
+  - history:
+    - last_visited: '2020-12-18T11:48:58'
+      pinned: false
+      title: Inbox (1) - marius@anteo.no - Anteo AS Mail
+      url: https://mail.google.com/mail/u/1/#inbox
+    - last_visited: '2020-12-18T14:21:24'
+      original-url: https://mail.google.com/mail/u/1/#inbox
+      pinned: false
+      title: Join my project on Google Developers Console - marius@anteo.no - Anteo
+        AS Mail
+      url: https://mail.google.com/mail/u/1/#inbox/FMfcgxwKjxBkmgdNRZtnRGcsRMfDmNNz
+    - active: true
+      last_visited: '2020-12-18T15:53:58'
+      original-url: https://mail.google.com/mail/u/1/#inbox/FMfcgxwKjxBkmgdNRZtnRGcsRMfDmNNz
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Inbox - marius@anteo.no - Anteo AS Mail
+      url: https://mail.google.com/mail/u/1/#inbox
+      zoom: 1.0
+  - history:
+    - last_visited: '2020-12-18T14:21:32'
+      pinned: false
+      title: Google Cloud Platform
+      url: https://console.cloud.google.com/invitation?project=anteo-drift&pli=1&authuser=1
+    - active: true
+      last_visited: '2020-12-18T14:21:42'
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Home – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/home/dashboard?project=anteo-drift&authuser=1
+      zoom: 1.0
+  - history:
+    - last_visited: '2020-12-18T11:48:58'
+      pinned: false
+      title: DuckDuckGo — Privacy, simplified.
+      url: https://start.duckduckgo.com/
+    - last_visited: '2020-12-18T11:48:59'
+      pinned: false
       title: E-post – Marius Nygård – Outlook
       url: https://outlook.office365.com/mail/inbox
+    - last_visited: '2020-12-18T12:37:47'
+      pinned: false
+      title: E-post – Marius Nygård – Outlook
+      url: https://outlook.office365.com/mail/inbox/id/AAQkADBkNWFhNWNkLWVkNDMtNGQ2MS1hNjI2LTljYTcxNWRmYzZkMAAQAO%2FBbkKE7VdNrJ6N2AL5MtU%3D
+    - last_visited: '2020-12-18T12:41:47'
+      pinned: false
+      title: E-post – Marius Nygård – Outlook
+      url: https://outlook.office365.com/mail/inbox/id/AAQkADBkNWFhNWNkLWVkNDMtNGQ2MS1hNjI2LTljYTcxNWRmYzZkMAAQAD0gBXbvSUhBiaT%2FcUyT5Gs%3D
+    - last_visited: '2020-12-18T12:41:50'
+      pinned: false
+      title: E-post – Marius Nygård – Outlook
+      url: https://outlook.office365.com/mail/inbox/id/AAQkADBkNWFhNWNkLWVkNDMtNGQ2MS1hNjI2LTljYTcxNWRmYzZkMAAQAO%2FBbkKE7VdNrJ6N2AL5MtU%3D
+    - last_visited: '2020-12-18T12:41:53'
+      pinned: false
+      title: E-post – Marius Nygård – Outlook
+      url: https://outlook.office365.com/mail/inbox/id/AAQkADBkNWFhNWNkLWVkNDMtNGQ2MS1hNjI2LTljYTcxNWRmYzZkMAAQAEEtFdh0L2VApRFYK1NRXD8%3D
     - active: true
+      last_visited: '2020-12-18T12:41:58'
       pinned: false
       scroll-pos:
         x: 0
         y: 0
       title: E-post – Marius Nygård – Outlook
-      url: https://outlook.office365.com/mail/inbox/id/AAQkADBkNWFhNWNkLWVkNDMtNGQ2MS1hNjI2LTljYTcxNWRmYzZkMAAQAIpY%2BxseLE0BjNmCZEftOIE%3D
-      zoom: 1.0
-  - history:
-    - active: true
-      pinned: false
-      scroll-pos:
-        x: 0
-        y: 0
-      title: Slack | Marius Nygård | Oslo Experis Autumn 2020
-      url: https://app.slack.com/client/T0192TNFV2L/D018BUP8Q5B
+      url: https://outlook.office365.com/mail/inbox/id/AAQkADBkNWFhNWNkLWVkNDMtNGQ2MS1hNjI2LTljYTcxNWRmYzZkMAAQAO%2FBbkKE7VdNrJ6N2AL5MtU%3D
       zoom: 1.0
   - active: true
     history:
-    - pinned: false
-      title: discord web at DuckDuckGo
-      url: https://duckduckgo.com/?q=discord+web&ia=web&iai=r1-0&page=1&sexp=%7B%22prodexp%22%3A%22b%22%2C%22prdsdexp%22%3A%22c%22%2C%22biaexp%22%3A%22b%22%2C%22msvrtexp%22%3A%22b%22%7D
-    - original-url: https://discord.com/channels/@me
+    - last_visited: '2020-12-18T15:24:52'
       pinned: false
-      title: Discord | Your Place to Talk and Hang Out
-      url: https://discord.com/
-    - original-url: https://discord.com/channels/@me
+      title: Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/invitation?project=anteo-drift&pli=1&authuser=1
+    - last_visited: '2020-12-18T15:24:59'
       pinned: false
-      title: Discord
-      url: https://discord.com/login?redirect_to=%2Fchannels%2F%40me
-    - original-url: https://discord.com/login?redirect_to=%2Fchannels%2F%40me
+      title: Home – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/home/dashboard?project=anteo-drift&authuser=1
+    - last_visited: '2020-12-18T15:25:24'
       pinned: false
-      title: Discord
-      url: https://discord.com/login
-    - original-url: https://discord.com/app
+      title: Reports – Billing – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/billing/005FCD-F1FD87-758D26/reports;grouping=GROUP_BY_SKU;projects=anteo-drift?project=anteo-drift&authuser=1
+    - last_visited: '2020-12-18T15:26:13'
       pinned: false
-      title: Discord
-      url: https://discord.com/channels/@me
-    - original-url: https://discord.com/channels/@me
+      title: Overview – Billing – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/billing/005FCD-F1FD87-758D26?authuser=1&project=anteo-drift
+    - last_visited: '2020-12-18T15:26:21'
       pinned: false
-      title: '#welcome'
-      url: https://discord.com/channels/721350668534677624/722067345429889065
+      title: Home – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/home/dashboard?authuser=1&project=anteo-drift
+    - last_visited: '2020-12-18T15:27:22'
+      pinned: false
+      title: Home – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/storage/browser?authuser=1&project=anteo-drift
+    - last_visited: '2020-12-18T15:27:48'
+      pinned: false
+      title: Home – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/home/dashboard?authuser=1&project=anteo-drift
+    - last_visited: '2020-12-18T15:27:59'
+      pinned: false
+      title: Google Cloud Platform
+      url: https://console.cloud.google.com/compute/instances?project=anteo-drift&authuser=1&instancessize=50
+    - last_visited: '2020-12-18T15:28:48'
+      pinned: false
+      title: Google Cloud Platform
+      url: https://console.cloud.google.com/compute/instancesDetail/zones/europe-west1-d/instances/gke-cluster-1-larger-pool-02e2d672-3b57?authuser=1&project=anteo-drift
+    - last_visited: '2020-12-18T15:30:07'
+      pinned: false
+      title: Google Cloud Platform
+      url: https://console.cloud.google.com/logs/viewer?authuser=1&project=anteo-drift
+    - last_visited: '2020-12-18T15:30:08'
+      pinned: false
+      title: Logs Explorer – Logging – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/logs/query?authuser=1&project=anteo-drift&query=%0A
+    - last_visited: '2020-12-18T15:30:36'
+      pinned: false
+      title: Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/list?project=anteo-drift&authuser=1
+    - last_visited: '2020-12-18T15:30:47'
+      pinned: false
+      title: Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/clusters/details/europe-west1-d/cluster-1?authuser=1&project=anteo-drift&tab=details&persistent_volumes_tablesize=50&storage_class_tablesize=50&nodes_tablesize=50&node_pool_tablesize=10
+    - last_visited: '2020-12-18T15:31:06'
+      pinned: false
+      title: Workloads – Kubernetes Engine – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/workload?authuser=1&project=anteo-drift&pageState=(%22savedViews%22:(%22i%22:%22e37986ab73a04a7b80690d18a5a7562c%22,%22c%22:%5B%5D,%22n%22:%5B%5D))
+    - last_visited: '2020-12-18T15:44:35'
+      pinned: false
+      title: nginx-ingr…ontroller – Deployment details – Kubernetes Engine – Anteo
+        Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/deployment/europe-west1-d/cluster-1/ingress-nginx/nginx-ingress-controller/events?authuser=1&project=anteo-drift
+    - last_visited: '2020-12-18T15:44:40'
+      pinned: false
+      title: Services & Ingress – Kubernetes Engine – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/discovery?authuser=1&project=anteo-drift&pageState=(%22savedViews%22:(%22i%22:%22aa4a578deaad4275949e85147ee161be%22,%22c%22:%5B%5D,%22n%22:%5B%5D))
+    - last_visited: '2020-12-18T15:44:44'
+      pinned: false
+      title: Storage – Kubernetes Engine – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/persistentvolumeclaim?authuser=1&project=anteo-drift&pageState=(%22savedViews%22:(%22i%22:%22fc46615cdbb945a7ac5a86edca0b5249%22,%22c%22:%5B%5D,%22n%22:%5B%5D))
+    - last_visited: '2020-12-18T15:44:47'
+      pinned: false
+      title: Services & Ingress – Kubernetes Engine – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/discovery?authuser=1&project=anteo-drift&pageState=(%22savedViews%22:(%22i%22:%225aa89dce8c274b1fbc053916c0492ead%22,%22c%22:%5B%5D,%22n%22:%5B%5D))
+    - last_visited: '2020-12-18T15:45:05'
+      pinned: false
+      title: Services & Ingress – Kubernetes Engine – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/ingresses?authuser=1&project=anteo-drift&pageState=(%22savedViews%22:(%22i%22:%22297b5b65648f41ef96a0913d2e32a8cf%22,%22c%22:%5B%5D,%22n%22:%5B%5D))
+    - last_visited: '2020-12-18T15:45:13'
+      pinned: false
+      title: Services & Ingress – Kubernetes Engine – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/discovery?authuser=1&project=anteo-drift&pageState=(%22savedViews%22:(%22i%22:%22b2c4475eb57a44da96c25fb154f20cf1%22,%22c%22:%5B%5D,%22n%22:%5B%5D))
+    - last_visited: '2020-12-18T15:45:32'
+      pinned: false
+      title: git-site – Service details – Kubernetes Engine – Anteo Drift – Google
+        Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/service/europe-west1-d/cluster-1/default/git-site/yaml/view?authuser=1&project=anteo-drift
+    - last_visited: '2020-12-18T15:45:42'
+      pinned: false
+      title: Workloads – Kubernetes Engine – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/workload?authuser=1&project=anteo-drift&pageState=(%22savedViews%22:(%22i%22:%22af7a863dc3ca45b2bb136e283bbeabda%22,%22c%22:%5B%5D,%22n%22:%5B%5D))
+    - last_visited: '2020-12-18T15:45:48'
+      pinned: false
+      title: git-site – Deployment details – Kubernetes Engine – Anteo Drift – Google
+        Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/deployment/europe-west1-d/cluster-1/default/git-site/yaml/view?authuser=1&project=anteo-drift&pageState=(%22savedViews%22:(%22i%22:%22af7a863dc3ca45b2bb136e283bbeabda%22,%22c%22:%5B%5D,%22n%22:%5B%5D))
+    - last_visited: '2020-12-18T15:47:31'
+      pinned: false
+      title: Workloads – Kubernetes Engine – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/workload?authuser=1&project=anteo-drift&pageState=(%22savedViews%22:(%22i%22:%22af7a863dc3ca45b2bb136e283bbeabda%22,%22c%22:%5B%5D,%22n%22:%5B%5D))
+    - last_visited: '2020-12-18T15:51:22'
+      pinned: false
+      title: Object Browser – Kubernetes Engine – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/object/browser?authuser=1&project=anteo-drift&pageState=(%22savedViews%22:(%22i%22:%22a5b60791586c446297fadf7f5d9b6e57%22,%22c%22:%5B%5D,%22n%22:%5B%5D))
+    - last_visited: '2020-12-18T15:51:24'
+      pinned: false
+      title: Configuration – Kubernetes Engine – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/config?authuser=1&project=anteo-drift&pageState=(%22savedViews%22:(%22i%22:%222e773559a4ae454f9c7264e7ae57ebd1%22,%22c%22:%5B%5D,%22n%22:%5B%5D))
+    - last_visited: '2020-12-18T15:51:26'
+      pinned: false
+      title: Object Browser – Kubernetes Engine – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/object/browser?authuser=1&project=anteo-drift&pageState=(%22savedViews%22:(%22i%22:%22d48e180842c24bf3a76683d86ef38f03%22,%22c%22:%5B%5D,%22n%22:%5B%5D))
+    - last_visited: '2020-12-18T15:51:43'
+      pinned: false
+      title: Storage – Kubernetes Engine – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/persistentvolumeclaim?authuser=1&project=anteo-drift&pageState=(%22savedViews%22:(%22i%22:%22e5f54d3d15d548b3a15b5c1089680474%22,%22c%22:%5B%5D,%22n%22:%5B%5D))
+    - last_visited: '2020-12-18T15:51:45'
+      pinned: false
+      title: Configuration – Kubernetes Engine – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/config?authuser=1&project=anteo-drift&pageState=(%22savedViews%22:(%22i%22:%22767f925ae5034b63a1790000c2e358c6%22,%22c%22:%5B%5D,%22n%22:%5B%5D))
+    - last_visited: '2020-12-18T15:51:47'
+      pinned: false
+      title: Applications – Kubernetes Engine – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/application?authuser=1&project=anteo-drift&pageState=(%22savedViews%22:(%22i%22:%22d36399f913504189a96e4b9e127cdd34%22,%22c%22:%5B%5D,%22n%22:%5B%5D))
+    - last_visited: '2020-12-18T15:52:20'
+      pinned: false
+      title: Configuration – Kubernetes Engine – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/config?authuser=1&project=anteo-drift&pageState=(%22savedViews%22:(%22i%22:%22915aae6c0aeb435ea0f548a2e494ff28%22,%22c%22:%5B%5D,%22n%22:%5B%5D))
+    - last_visited: '2020-12-18T15:53:20'
+      pinned: false
+      title: Workloads – Kubernetes Engine – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/workload?authuser=1&project=anteo-drift&pageState=(%22savedViews%22:(%22i%22:%2229bd4b572e044100885fb837d674ccf4%22,%22c%22:%5B%5D,%22n%22:%5B%5D))
+    - last_visited: '2020-12-18T15:54:09'
+      pinned: false
+      title: Workloads – Kubernetes Engine – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/workload?authuser=1&project=anteo-drift
     - active: true
-      original-url: https://discord.com/channels/721350668534677624/722067345429889065
+      last_visited: '2020-12-18T15:54:22'
       pinned: false
       scroll-pos:
         x: 0
         y: 0
-      title: '#general'
-      url: https://discord.com/channels/771390056476704855/771390057944055819
+      title: Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/list?authuser=1&project=anteo-drift
+      zoom: 1.0
+  - history:
+    - last_visited: '2020-12-18T15:59:27'
+      pinned: false
+      title: Google Cloud Platform
+      url: https://console.cloud.google.com/gcr/images/anteo-drift?project=anteo-drift&authuser=1
+    - last_visited: '2020-12-18T16:00:17'
+      pinned: false
+      title: Google Cloud Platform
+      url: https://console.cloud.google.com/gcr/images/anteo-drift/EU/grafana?project=anteo-drift&authuser=1&gcrImageListsize=30
+    - last_visited: '2020-12-18T16:00:21'
+      pinned: false
+      title: Google Cloud Platform
+      url: https://console.cloud.google.com/gcr/images/anteo-drift?project=anteo-drift&authuser=1
+    - last_visited: '2020-12-18T16:00:32'
+      pinned: false
+      title: VPC networks – VPC network – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/networking/networks/list?authuser=1&project=anteo-drift
+    - last_visited: '2020-12-18T16:00:46'
+      pinned: false
+      title: External IP addresses – VPC network – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/networking/addresses/list?authuser=1&project=anteo-drift
+    - last_visited: '2020-12-18T16:03:08'
+      pinned: false
+      title: Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/list?authuser=1&project=anteo-drift
+    - last_visited: '2020-12-18T16:12:06'
+      pinned: false
+      title: Google Cloud Platform
+      url: https://console.cloud.google.com/gcr/images/anteo-drift?authuser=1&project=anteo-drift
+    - last_visited: '2020-12-18T16:12:26'
+      pinned: false
+      title: Google Cloud Platform
+      url: https://console.cloud.google.com/gcr/images/anteo-drift?project=anteo-drift&authuser=1
+    - last_visited: '2020-12-18T16:12:31'
+      pinned: false
+      title: Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/list?project=anteo-drift&authuser=1
+    - last_visited: '2020-12-18T16:15:17'
+      pinned: false
+      title: Workloads – Kubernetes Engine – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/workload?authuser=1&project=anteo-drift
+    - last_visited: '2020-12-18T16:15:30'
+      pinned: false
+      title: Services & Ingress – Kubernetes Engine – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/discovery?authuser=1&project=anteo-drift&pageState=(%22savedViews%22:(%22i%22:%22d16971e5cc3c4eef88601934d9eaf829%22,%22c%22:%5B%5D,%22n%22:%5B%5D))
+    - last_visited: '2020-12-18T16:15:38'
+      pinned: false
+      title: Services & Ingress – Kubernetes Engine – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/ingresses?authuser=1&project=anteo-drift&pageState=(%22savedViews%22:(%22i%22:%22b4d0f905c2774cd3b4f5d9e006b7d7ae%22,%22c%22:%5B%5D,%22n%22:%5B%5D))
+    - last_visited: '2020-12-18T16:15:41'
+      pinned: false
+      title: Services & Ingress – Kubernetes Engine – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/discovery?authuser=1&project=anteo-drift&pageState=(%22savedViews%22:(%22i%22:%22226bf52d3a774dbd92a977b605284700%22,%22c%22:%5B%5D,%22n%22:%5B%5D))
+    - last_visited: '2020-12-18T16:19:33'
+      pinned: false
+      title: routeplann…ts-upload – Service details – Kubernetes Engine – Anteo Drift
+        – Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/service/europe-west1-d/cluster-1/default/routeplanner-shipment-attachments-upload/yaml/view?authuser=1&project=anteo-drift
+    - last_visited: '2020-12-18T16:19:49'
+      pinned: false
+      title: Services & Ingress – Kubernetes Engine – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/discovery?authuser=1&project=anteo-drift&pageState=(%22savedViews%22:(%22i%22:%22f868263da5a647e689b86ca4ccd88726%22,%22c%22:%5B%5D,%22n%22:%5B%5D))
+    - last_visited: '2020-12-18T16:20:26'
+      pinned: false
+      title: Workloads – Kubernetes Engine – Anteo Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/workload?authuser=1&project=anteo-drift&pageState=(%22savedViews%22:(%22i%22:%22f6e830b2d45f4f4ba50190bb7ee5f969%22,%22c%22:%5B%5D,%22n%22:%5B%5D))
+    - last_visited: '2020-12-18T16:21:22'
+      pinned: false
+      title: routeplann…ts-upload – Deployment details – Kubernetes Engine – Anteo
+        Drift – Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/deployment/europe-west1-d/cluster-1/default/routeplanner-shipment-attachments-upload/yaml/view?authuser=1&project=anteo-drift
+    - active: true
+      last_visited: '2020-12-19T15:34:00'
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Google Cloud Platform
+      url: https://console.cloud.google.com/kubernetes/list?authuser=1&project=anteo-drift
       zoom: 1.0
