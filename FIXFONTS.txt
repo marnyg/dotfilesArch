@@ -1,0 +1,4 @@
+to get emoji fonts to work, install 'libxft-bgra' via yay,
+the font i use for neovim-tree is nerd-fonts-go-mono 
+and to register this font in .config/fontconfig/fonts put
+<family>GoMono Nerd Font</family> under <family>monospace</family>

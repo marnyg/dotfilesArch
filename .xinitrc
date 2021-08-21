@@ -1,6 +1,6 @@
 #! /bin/bash
 
-#~/.screenlayout/this.sh
+~/.screenlayout/this.sh
 
 #feh --bg-scale ~/.local/share/.wall3.jpeg
 nvidia-settings --load-config-only
